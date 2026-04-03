@@ -7,7 +7,7 @@ body {
 }
 
 /* --- HEADER --- */
-.header {
+.header {<img src="logo.png" class="logo" alt="Logo RESTEV">
   text-align: center;
   padding: 35px 15px;
   background: white;
