@@ -4,27 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
-
-  <!-- Lien vers le CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <img src="logo.png" class="logo" alt="Logo RESTEV">
+
+  <header class="header">
+    <img src="logo.png" class="logo">
     <h1>Analyse des produits CMR</h1>
-    <p class="subtitle">RESTEV – Prévention Santé au Travail</p>
+    <p class="subtitle">RESTEV – Outil de prévention</p>
   </header>
 
   <main>
-    <section class="card">
-      <h2>Informations sur le produit</h2>
+    <div class="card">
 
-      <label>Nom du produit :</label>
+      <label class="title">Nom du produit</label>
       <input id="produit" type="text" placeholder="Ex : Acétone">
 
-      <h3>Choisissez les mentions H :</h3>
-
+      <label class="title">Mentions H détectées</label>
       <div class="h-grid">
         <button class="h-btn" onclick="toggleH('H340')">H340</button>
         <button class="h-btn" onclick="toggleH('H350')">H350</button>
@@ -34,23 +31,18 @@
         <button class="h-btn" onclick="toggleH('H360D')">H360D</button>
       </div>
 
-      <button class="analyse-btn" onclick="analyze()">Analyser</button>
-
-      <!-- Bouton RESET -->
-      <button class="analyse-btn" style="background:#555;margin-top:10px;" onclick="resetAnalyse()">
-        Réinitialiser
-      </button>
+      <button class="btn-primary" onclick="analyze()">Analyser</button>
+      <button class="btn-secondary" onclick="resetAnalyse()">Réinitialiser</button>
 
       <div id="result"></div>
-    </section>
+
+    </div>
   </main>
 
   <footer>
-    <p>Application CMR – RESTEV • Version Démonstration</p>
+    <p>© RESTEV – 2026 | Démo interne</p>
   </footer>
 
-  <!-- Lien vers le JS -->
   <script src="app.js"></script>
-
 </body>
 </html>
