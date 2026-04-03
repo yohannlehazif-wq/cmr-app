@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
+
+  <!-- Lien vers ton fichier CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,15 +36,17 @@
       <button class="btn-primary" onclick="analyze()">Analyser</button>
       <button class="btn-secondary" onclick="resetAnalyse()">Réinitialiser</button>
 
-      <div id="result"></div>
-<!-- Icônes animées -->
-<svg id="icon-danger" class="icon hidden" viewBox="0 0 24 24">
-  <path fill="red" d="M1 21h22L12 2 1 21z"/>
-</svg>
+      <!-- Icônes animées -->
+      <svg id="icon-danger" class="icon hidden" viewBox="0 0 24 24">
+        <path fill="red" d="M1 21h22L12 2 1 21z"/>
+      </svg>
 
-<svg id="icon-ok" class="icon hidden" viewBox="0 0 24 24">
-  <path fill="green" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-</svg>
+      <svg id="icon-ok" class="icon hidden" viewBox="0 0 24 24">
+        <path fill="green" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+
+      <div id="result"></div>
+
     </div>
   </main>
 
@@ -50,6 +54,7 @@
     <p>© RESTEV – 2026 | Version Démo Professionnelle</p>
   </footer>
 
+  <!-- Lien vers ton script JS -->
   <script src="app.js"></script>
 
 </body>
