@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
 
-  <!-- Lien vers le fichier CSS premium -->
+  <!-- Lien vers le fichier CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
+
 <body>
 
   <header class="header">
-    <!-- Logo RESTEV -->
     <img src="logo.png" class="logo" alt="Logo RESTEV">
     <h1 class="header-title">Analyse des produits CMR</h1>
     <p class="subtitle">RESTEV – Outil d’aide à la prévention</p>
   </header>
-<img src="logo.png" class="logo" alt="Logo RESTEV">
+
   <main>
     <div class="card fade-in">
 
@@ -37,23 +36,28 @@
       <button class="btn-primary" onclick="analyze()">Analyser</button>
       <button class="btn-secondary" onclick="resetAnalyse()">Réinitialiser</button>
 
-      <!-- Icône danger animée -->
-      <svg id="icon-danger" class="icon hidden" viewBox="0 0 24 24">
-        <path fill="red" d="M1 21h22L12 2 1 21z"/>
-      </svg>
+      <!-- PICTOGRAMMES SGH -->
+      <div id="pictos" class="pictos-container hidden">
+        <h4>Pictogrammes SGH :</h4>
+        <div class="pictos-grid">
+          <img id="sgm-flamme" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/GHS-pictogram-flamme.svg">
+          <img id="sgm-toxic" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/GHS-pictogram-skull.svg">
+          <img id="sgm-corrosif" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/6/62/GHS-pictogram-acid.svg">
+          <img id="sgm-point" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/GHS-pictogram-exclam.svg">
+          <img id="sgm-cmr" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/GHS-pictogram-health-hazard.svg">
+          <img id="sgm-explosif" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/GHS-pictogram-explos.svg">
+          <img id="sgm-environnement" class="picto hidden" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/GHS-pictogram-pollu.svg">
+        </div>
+      </div>
 
-      <!-- Icône OK animée -->
-      <svg id="icon-ok" class="icon hidden" viewBox="0 0 24 24">
-        <path fill="green" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-      </svg>
-
+      <!-- Résultat -->
       <div id="result"></div>
 
     </div>
   </main>
 
   <footer>
-    <p>© RESTEV – 2026 | Version Démo Professionnelle</p>
+    <p>© RESTEV – Version Démo Professionnelle</p>
   </footer>
 
   <!-- Lien vers ton script JS -->
