@@ -1,6 +1,6 @@
 let selectedH = [];
 
-/* --- Sélection des mentions H --- */
+/* Sélection des mentions H */
 function toggleH(code) {
   const btn = event.target;
 
@@ -13,7 +13,7 @@ function toggleH(code) {
   }
 }
 
-/* --- ANALYSE PRINCIPALE --- */
+/* Analyse principale */
 function analyze() {
   const produit = document.getElementById("produit").value || "Non renseigné";
 
@@ -27,11 +27,11 @@ function analyze() {
 
   const isCMR = selectedH.some(h => CMR.includes(h));
 
-  /* --- Réinitialisation des pictos --- */
+  // Masquer pictos SGH
   document.querySelectorAll(".picto").forEach(p => p.classList.add("hidden"));
   document.getElementById("pictos").classList.remove("hidden");
 
-  /* --- Affichage automatique des pictos SGH --- */
+  // Affichage dynamique SGH
   selectedH.forEach(h => {
     if (INFLAM.includes(h)) document.getElementById("sg-flamme").classList.remove("hidden");
     if (IRRITANT.includes(h)) document.getElementById("sg-exclam").classList.remove("hidden");
@@ -42,11 +42,10 @@ function analyze() {
     if (ENV.includes(h)) document.getElementById("sg-env").classList.remove("hidden");
   });
 
-  /* --- ICÔNES ANIMÉES --- */
+  // Icônes animées
   document.getElementById("icon-danger").classList.add("hidden");
   document.getElementById("icon-ok").classList.add("hidden");
 
-  /* --- Construction du bloc résultat --- */
   let html = `<div class='result-section fade-in'>`;
 
   if (isCMR) {
@@ -60,16 +59,16 @@ function analyze() {
       <h4>Risques identifiés :</h4>
       <ul>
         <li>Cancérogène, Mutagène ou Reprotoxique</li>
-        <li>Effets possibles même à faible dose</li>
-        <li>Risque à long terme / effets irréversibles</li>
+        <li>Risque irréversible</li>
+        <li>Peut agir à faible dose</li>
       </ul>
 
-      <h4>Mesures de prévention obligatoires :</h4>
+      <h4>Mesures de prévention :</h4>
       <ul>
-        <li>Substitution si possible</li>
-        <li>Ventilation + aspiration des vapeurs</li>
+        <li>Substitution</li>
+        <li>Ventilation renforcée</li>
         <li>Gants nitrile / Lunettes / Masque A2P3</li>
-        <li>Fiche d’exposition + Suivi médical</li>
+        <li>Fiche d'exposition + Suivi médical</li>
       </ul>
     `;
     document.getElementById("icon-danger").classList.remove("hidden");
@@ -82,7 +81,7 @@ function analyze() {
 
       <h4>Recommandations :</h4>
       <ul>
-        <li>Port des gants adaptés</li>
+        <li>Gants adaptés</li>
         <li>Aération recommandée</li>
         <li>Protection oculaire si besoin</li>
       </ul>
@@ -94,7 +93,7 @@ function analyze() {
   document.getElementById("result").innerHTML = html;
 }
 
-/* --- RESET COMPLET --- */
+/* Reset complet */
 function resetAnalyse() {
   selectedH = [];
   document.querySelectorAll(".h-btn").forEach(btn => btn.classList.remove("selected"));
