@@ -191,10 +191,16 @@ input:focus {
   justify-content: center;
 }
 
-.picto {
+..picto {
   width: 70px;
   height: 70px;
-  animation: pulse 1.2s infinite ease-in-out;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 auto;
+}
+``
 }
 
 /* --- SMARTPHONE --- */
