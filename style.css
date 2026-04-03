@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Analyse CMR – RESTEV</title>
+
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" class="logo" alt="Logo RESTEV">
+    <h1>Analyse des produits CMR</h1>
+    <p class="subtitle">RESTEV – Prévention santé au travail</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Informations sur le produit</h2>
+
+      <label>Nom du produit :</label>
+      <input id="produit" type="text" placeholder="Ex : Acétone">
+
+      <h3>Choisissez les mentions H :</h3>
+
+      <div class="h-grid">
+        <button class="h-btn" onclick="toggleH('H340')">H340</button>
+        <button class="h-btn" onclick="toggleH('H350')">H350</button>
+        <button class="h-btn" onclick="toggleH('H350i')">H350i</button>
+        <button class="h-btn" onclick="toggleH('H360')">H360</button>
+        <button class="h-btn" onclick="toggleH('H360F')">H360F</button>
+        <button class="h-btn" onclick="toggleH('H360D')">H360D</button>
+      </div>
+
+      <button class="analyse-btn" onclick="analyze()">Analyser</button>
+
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Application CMR – RESTEV • Version Démonstration</p>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
