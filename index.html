@@ -5,31 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
 
-  <!-- CSS premium -->
+  <!-- Lien vers le fichier CSS premium -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Icônes animées -->
-<svg id="icon-danger" class="icon hidden" viewBox="0 0 24 24">
-  <path fill="red" d="M1 21h22L12 2 1 21z"/>
-</svg>
-
-<svg id="icon-ok" class="icon hidden" viewBox="0 0 24 24">
-  <path fill="green" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-</svg>
-
-<!-- JS premium -->
-<script src="app.js"></script>
-</body>
-</html>
-
   <header class="header">
+    <!-- Logo RESTEV -->
     <img src="logo.png" class="logo" alt="Logo RESTEV">
     <h1 class="header-title">Analyse des produits CMR</h1>
     <p class="subtitle">RESTEV – Outil d’aide à la prévention</p>
   </header>
+
   <main>
     <div class="card fade-in">
 
@@ -49,11 +37,12 @@
       <button class="btn-primary" onclick="analyze()">Analyser</button>
       <button class="btn-secondary" onclick="resetAnalyse()">Réinitialiser</button>
 
-      <!-- Icônes animées -->
+      <!-- Icône danger animée -->
       <svg id="icon-danger" class="icon hidden" viewBox="0 0 24 24">
         <path fill="red" d="M1 21h22L12 2 1 21z"/>
       </svg>
 
+      <!-- Icône OK animée -->
       <svg id="icon-ok" class="icon hidden" viewBox="0 0 24 24">
         <path fill="green" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
       </svg>
