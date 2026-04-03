@@ -26,11 +26,11 @@ function analyze() {
       <div class="light" style="background:red;"></div>
       <h3>🔴 Produit CMR détecté</h3>
       <p><b>${produit}</b></p>
-      <p>Mentions : ${selectedH.join(", ")}</p>
+      <p>Mentions détectées : ${selectedH.join(", ")}</p>
       <ul>
-        <li>Substitution recommandée</li>
-        <li>Ventilation ou confinement</li>
-        <li>EPI obligatoires</li>
+        <li>Substitution si possible</li>
+        <li>Ventilation ou travail en vase clos</li>
+        <li>Port d’EPI adaptés</li>
         <li>Fiche d’exposition obligatoire</li>
       </ul>
     `;
@@ -40,37 +40,22 @@ function analyze() {
       <h3>🟢 Aucun indicateur CMR détecté</h3>
       <p><b>${produit}</b></p>
       <ul>
-        <li>Vérifier autres dangers</li>
-        <li>Protection standard recommandée</li>
+        <li>Vérifier autres dangers (irritants, corrosifs)</li>
+        <li>Utiliser protections standard</li>
       </ul>
     `;
   }
 
   html += `</div>`;
   document.getElementById("result").innerHTML = html;
-}function resetAnalyse() {
-  selectedH = []; // Vide la liste des mentions H
-
-  // Retire la classe "selected" de tous les boutons
-  const boutons = document.querySelectorAll(".h-btn");
-  boutons.forEach(btn => btn.classList.remove("selected"));
-
-  // Vide le champ produit
-  document.getElementById("produit").value = "";
-
-  // Efface les résultats
-  document.getElementById("result").innerHTML = "";
 }
-function resetAnalyse() {
-  selectedH = []; // Vide la liste des mentions H
 
-  // Retire la classe "selected" de tous les boutons
+function resetAnalyse() {
+  selectedH = [];
+
   const boutons = document.querySelectorAll(".h-btn");
   boutons.forEach(btn => btn.classList.remove("selected"));
 
-  // Vide le champ produit
   document.getElementById("produit").value = "";
-
-  // Efface les résultats
   document.getElementById("result").innerHTML = "";
 }
