@@ -1,96 +1,135 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Analyse CMR – RESTEV</title>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e7f0fd, #f0f6ff);
+  min-height: 100vh;
+}
 
-  <!-- Lien vers le fichier CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
+.header {
+  text-align: center;
+  padding: 25px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
 
-<body>
-  <header>
-    <img src="logo.png" class="logo" alt="Logo RESTEV">
-    <h1>Analyse des produits CMR</h1>
-    <p class="subtitle">RESTEV – Prévention santé au travail</p>
-  </header>
+.logo {
+  height: 70px;
+  margin-bottom: 10px;
+}
 
-  <main>
-    <section class="card">
-      <h2>Informations sur le produit</h2>
+h1 {
+  font-size: 26px;
+  color: #0059b3;
+  margin: 5px 0;
+}
 
-      <label>Nom du produit :</label>
-      <input id="produit" type="text" placeholder="Ex : Acétone">
+.subtitle {
+  color: #444;
+  font-size: 14px;
+}
 
-      <h3>Choisissez les mentions H :</h3>
+.card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.12);
+  animation: fadeIn 0.6s ease;
+}
 
-      <div class="h-grid">
-        <button class="h-btn" onclick="toggleH('H340')">H340</button>
-        <button class="h-btn" onclick="toggleH('H350')">H350</button>
-        <button class="h-btn" onclick="toggleH('H350i')">H350i</button>
-        <button class="h-btn" onclick="toggleH('H360')">H360</button>
-        <button class="h-btn" onclick="toggleH('H360F')">H360F</button>
-        <button class="h-btn" onclick="toggleH('H360D')">H360D</button>
-      </div>
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-      <button class="analyse-btn" onclick="analyze()">Analyser</button>
+.title {
+  font-weight: bold;
+  margin-top: 15px;
+}
 
-      <div id="result"></div>
-    </section>
-  </main>
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: #f8fbff;
+}
 
-  <footer>
-    <p>Application CMR – RESTEV • Version Démonstration</p>
-  </footer>
+.h-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
 
-  <!-- Script JS -->
-  <script src="app.js"></script>
+.h-btn {
+  padding: 12px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+}
 
-</body>
-</html>
+.h-btn:hover {
+  background: #e8f1ff;
+}
+
+.h-btn.selected {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #007bff;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #005ec2;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: #999;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.result-section {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border-left: 5px solid #007bff;
+}
+
+.light {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 15px auto;
+}
+
 /* Version smartphone */
 @media (max-width: 600px) {
-
-  .card {
-    margin: 20px 10px;
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  input {
-    font-size: 16px;
-    padding: 8px;
-  }
-
   .h-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 boutons par ligne */
-    gap: 8px;
-  }
-
-  .h-btn {
-    padding: 12px 5px;
-    font-size: 14px;
-  }
-
-  .analyse-btn {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .light {
-    width: 50px;
-    height: 50px;
-  }
-
-  footer {
-    font-size: 12px;
-    padding: 10px;
+    grid-template-columns: repeat(2,1fr);
   }
 }
