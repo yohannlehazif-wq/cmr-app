@@ -18,3 +18,6 @@
   margin-bottom: 6px;
   font-size: 15px;
 }
+if (INFLAM.includes(h)) document.getElementById("sg-flamme").classList.remove("hidden");
+if (IRRITANT.includes(h)) document.getElementById("sg-exclam").classList.remove("hidden");
+if (TOXIQUE.includes(h)) document.getElementById("sg-skull").classList.remove("
