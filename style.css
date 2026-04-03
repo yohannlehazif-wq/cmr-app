@@ -120,14 +120,14 @@ input {
 }
 
 .picto {
+  .picto {
   width: 75px;
   height: 75px;
   object-fit: contain;
-  display: block;
-  background: transparent !important;
+  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  margin: auto;
+}
 }
 
 .hidden {
