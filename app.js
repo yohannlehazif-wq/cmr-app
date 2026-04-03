@@ -48,4 +48,29 @@ function analyze() {
 
   html += `</div>`;
   document.getElementById("result").innerHTML = html;
+}function resetAnalyse() {
+  selectedH = []; // Vide la liste des mentions H
+
+  // Retire la classe "selected" de tous les boutons
+  const boutons = document.querySelectorAll(".h-btn");
+  boutons.forEach(btn => btn.classList.remove("selected"));
+
+  // Vide le champ produit
+  document.getElementById("produit").value = "";
+
+  // Efface les résultats
+  document.getElementById("result").innerHTML = "";
+}
+function resetAnalyse() {
+  selectedH = []; // Vide la liste des mentions H
+
+  // Retire la classe "selected" de tous les boutons
+  const boutons = document.querySelectorAll(".h-btn");
+  boutons.forEach(btn => btn.classList.remove("selected"));
+
+  // Vide le champ produit
+  document.getElementById("produit").value = "";
+
+  // Efface les résultats
+  document.getElementById("result").innerHTML = "";
 }
