@@ -192,6 +192,9 @@ input:focus {
 }
 
 ..picto {
+  
+background-color: transparent !important;
+}
   width: 70px;
   height: 70px;
   background: transparent;
