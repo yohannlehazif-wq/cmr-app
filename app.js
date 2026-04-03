@@ -43,8 +43,8 @@ function analyze() {
   });
 
   // Icônes animées
-  document.getElementById("icon-danger").classList.add("hidden");
-  document.getElementById("icon-ok").classList.add("hidden");
+  document.getElementById("icon-danger")?.classList.add("hidden");
+  document.getElementById("icon-ok")?.classList.add("hidden");
 
   let html = `<div class='result-section fade-in'>`;
 
@@ -59,19 +59,18 @@ function analyze() {
       <h4>Risques identifiés :</h4>
       <ul>
         <li>Cancérogène, Mutagène ou Reprotoxique</li>
-        <li>Risque irréversible</li>
-        <li>Peut agir à faible dose</li>
+        <li>Risque irréversible à long terme</li>
+        <li>Effets possibles même à faible dose</li>
       </ul>
 
       <h4>Mesures de prévention :</h4>
       <ul>
-        <li>Substitution</li>
+        <li>Substitution si possible</li>
         <li>Ventilation renforcée</li>
         <li>Gants nitrile / Lunettes / Masque A2P3</li>
         <li>Fiche d'exposition + Suivi médical</li>
       </ul>
     `;
-    document.getElementById("icon-danger").classList.remove("hidden");
   } else {
     html += `
       <div class="light" style="background:green;"></div>
@@ -86,7 +85,6 @@ function analyze() {
         <li>Protection oculaire si besoin</li>
       </ul>
     `;
-    document.getElementById("icon-ok").classList.remove("hidden");
   }
 
   html += `</div>`;
@@ -99,7 +97,5 @@ function resetAnalyse() {
   document.querySelectorAll(".h-btn").forEach(btn => btn.classList.remove("selected"));
   document.getElementById("produit").value = "";
   document.getElementById("result").innerHTML = "";
-  document.getElementById("icon-danger").classList.add("hidden");
-  document.getElementById("icon-ok").classList.add("hidden");
   document.querySelectorAll(".picto").forEach(p => p.classList.add("hidden"));
 }
