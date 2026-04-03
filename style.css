@@ -181,3 +181,30 @@ footer {
     font-size: 15px;
   }
 }
+/* Icônes animées */
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  display: block;
+  animation: pulse 1.3s infinite ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: .8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: .8; }
+}
+
+.light {
+  animation: glow 1.2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px rgba(13,110,253,0.3); }
+  to   { box-shadow: 0 0 20px rgba(13,110,253,0.6); }
+}
