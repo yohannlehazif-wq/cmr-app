@@ -120,8 +120,13 @@ input:focus {
   margin-top: 5px;
 }
 
-.btn-primary:hover {
-  filter: brightness(1.1);
+.btn-primary {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .btn-secondary {
