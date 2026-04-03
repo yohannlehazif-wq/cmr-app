@@ -184,13 +184,18 @@ input:focus {
 }
 
 .pictos-grid {
-  margin-top: 15px;
   display: grid;
-  grid-template-columns: repeat(3, 70px);
+  grid-template-columns: repeat(3, 90px);
   gap: 12px;
   justify-content: center;
+  align-items: center;
 }
 
+.picto {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
 ..picto {
   
 background-color: transparent !important;
