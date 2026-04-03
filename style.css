@@ -7,7 +7,7 @@ body {
 }
 
 /* --- HEADER --- */
-.header {<img src="logo.png" class="logo" alt="Logo RESTEV">
+.header {
   text-align: center;
   padding: 35px 15px;
   background: white;
@@ -192,8 +192,8 @@ input:focus {
 }
 
 .picto {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   animation: pulse 1.2s infinite ease-in-out;
 }
 
