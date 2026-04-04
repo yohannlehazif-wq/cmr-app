@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #e2edff, #f8fbff);
+  background: #eef4fb;
   margin: 0;
 }
 
@@ -8,7 +8,7 @@ body {
   background: white;
   padding: 25px;
   text-align: center;
-  border-bottom: 5px solid #007bff;
+  border-bottom: 4px solid #007bff;
 }
 
 .logo {
@@ -16,55 +16,41 @@ body {
   margin-bottom: 10px;
 }
 
-.header h1 {
-  margin: 0;
-  color: #0056d6;
-  font-size: 28px;
-}
-
-.subtitle {
-  margin-top: 5px;
-  color: #444;
-}
-
 .card {
-  max-width: 520px;
+  max-width: 550px;
   margin: 40px auto;
   background: white;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0px 12px 35px rgba(0,0,0,0.12);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
 }
 
 input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  background: #f8fbff;
+  border: 1px solid #bbb;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-bottom: 20px;
 }
 
 button {
   padding: 12px;
-  border-radius: 12px;
   border: 2px solid #007bff;
+  border-radius: 10px;
   background: white;
   cursor: pointer;
-  font-size: 16px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 button:hover {
-  background: #e6f0ff;
+  background: #e5f0ff;
 }
 
 button.selected {
@@ -72,38 +58,41 @@ button.selected {
   color: white;
 }
 
-.analyse, .reset {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 18px;
-  margin-top: 10px;
-  border: none;
-  cursor: pointer;
-}
-
 .analyse {
-  background: linear-gradient(45deg, #007bff, #0056d6);
+  width: 100%;
+  background: #007bff;
   color: white;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  border: none;
+  margin-top: 15px;
 }
 
 .reset {
+  width: 100%;
   background: #555;
   color: white;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  border: none;
+  margin-top: 10px;
 }
 
 .result-section {
-  margin-top: 30px;
-  padding: 20px;
-  border-radius: 12px;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.6;
 }
 
 .result-cmr {
-  background: #ffe5e5;
+  background: #ffe1e1;
   border-left: 6px solid red;
 }
 
 .result-ok {
-  background: #e5ffe8;
+  background: #e1ffe7;
   border-left: 6px solid green;
 }
