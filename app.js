@@ -20,73 +20,26 @@ function analyze() {
 
   if (isCMR) {
     html += `
-      <h3 style="color:red;">🔴 PRODUIT CMR</h3>
-      <p><b>Produit :</b> ${produit}</p>
+      <h3 style="color:red;">🔴 Produit CMR détecté</h3>
+      <p><b>${produit}</b></p>
       <p><b>Mentions :</b> ${selectedH.join(", ")}</p>
+
+      <h4>Pourquoi c’est dangereux :</h4>
+      <ul>
+        <li>Peut provoquer un cancer (H350)</li>
+        <li>Peut altérer l’ADN (H340)</li>
+        <li>Peut nuire à la fertilité / fœtus (H360)</li>
+      </ul>
 
       <h4>Prévention :</h4>
       <ul>
         <li>Substitution si possible</li>
-        <li>Ventilation locale + aspiration</li>
+        <li>Ventilation renforcée + aspiration</li>
+        <li>Masque A2P3 obligatoire</li>
         <li>Gants nitrile</li>
-        <li>Masque A2P3</li>
         <li>Lunettes enveloppantes</li>
       </ul>
     `;
-  } else {
-    html += `
-      <h3 style="color:green;">🟢 PRODUIT NON CMR</h3>
-      <p><b>Produit :</b> ${produit}</p>
-
-      <h4>Bonnes pratiques :</h4>
-      <ul>
-        <li>Gants adaptés</li>
-        <li>Aération du poste</li>
-        <li>Lunettes si projections</li>
-      </ul>
-    `;
-  }
-
-  html += "</div>";
-
-  document.getElementById("result").innerHTML = html;
-}
-
-function resetAnalyse() function analyze() {
-  const produit = document.getElementById("produit").value || "Non renseigné";
-  const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
-  const isCMR = selectedH.some(h => CMR.includes(h));
-
-  // Masquer le SGH au début
-  document.getElementById("sgh").classList.add("hidden");
-
-  let html = `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
-
-  if (isCMR) {
-    html += `
-      <h3 style="color:red;">🔴 PRODUIT CMR</h3>
-      <p><b>Produit :</b> ${produit}</p>
-      <p><b>Mentions CMR :</b> ${selectedH.join(", ")}</p>
-
-      <h4>⚠️ Dangers :</h4>
-      <ul>
-        <li>Risque de cancer (H350)</li>
-        <li>Altération génétique possible (H340)</li>
-        <li>Atteinte possible au fœtus ou à la fertilité (H360)</li>
-      </ul>
-
-      <h4>🛡️ Prévention :</h4>
-      <ul>
-        <li>Substitution si possible</li>
-        <li>Ventilation renforcée + aspiration locale</li>
-        <li>Gants nitrile et lunettes de sécurité</li>
-        <li>Masque A2P3 obligatoire</li>
-      </ul>
-    `;
-
-    // ✅ afficher le pictogramme CMR
-    document.getElementById("sgh").classList.remove("hidden");
-
   } else {
     html += `
       <h3 style="color:green;">🟢 Produit NON CMR</h3>
@@ -94,18 +47,20 @@ function resetAnalyse() function analyze() {
 
       <h4>Bonnes pratiques :</h4>
       <ul>
-        <li>Gants adaptés au produit</li>
-        <li>Aération du poste de travail</li>
+        <li>Port de gants adaptés</li>
+        <li>Aération suffisante</li>
         <li>Lunettes si projections possibles</li>
       </ul>
     `;
   }
 
-  html += "</div>";
+  html += `</div>`;
   document.getElementById("result").innerHTML = html;
-}{
+}
+
+function resetAnalyse() {
   selectedH = [];
-  document.querySelectorAll("button.selected").forEach(btn => btn.classList.remove("selected"));
+  document.querySelectorAll("button.selected").forEach(b => b.classList.remove("selected"));
   document.getElementById("produit").value = "";
   document.getElementById("result").innerHTML = "";
 }
