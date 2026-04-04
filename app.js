@@ -31,7 +31,7 @@ function analyze() {
     `;
   }
 
-  html += "</div>";
+  html += `</div>`;
   document.getElementById("result").innerHTML = html;
 }
 
