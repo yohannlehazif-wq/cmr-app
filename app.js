@@ -12,7 +12,7 @@ function toggleH(code) {
   }
 }
 
-/* Analyse + SGH + Reco */
+/* Analyse */
 function analyze() {
   const produit = document.getElementById("produit").value || "Non renseigné";
 
@@ -26,9 +26,11 @@ function analyze() {
 
   const isCMR = selectedH.some(h => CMR.includes(h));
 
-  // ✅ Réinitialisation
+  // reset SGH
   document.querySelectorAll(".sgh").forEach(i => i.classList.add("hidden"));
   document.getElementById("sgh-zone").classList.remove("hidden");
+
+  // reset recos
   document.getElementById("reco-list").innerHTML = "";
   document.getElementById("reco").classList.remove("hidden");
 
@@ -37,7 +39,7 @@ function analyze() {
   selectedH.forEach(h => {
 
     if (CMR.includes(h)) {
-      document.getElementById("sg-sante").classList.remove("hidden");
+      document.getElementById("sgh-sante").classList.remove("hidden");
       recos.push("Masque A2P3 obligatoire");
       recos.push("Gants nitrile résistants");
       recos.push("Ventilation renforcée");
@@ -45,37 +47,37 @@ function analyze() {
     }
 
     if (INFLAM.includes(h)) {
-      document.getElementById("sg-flamme").classList.remove("hidden");
-      recos.push("Éloigner toute source d’ignition");
+      document.getElementById("sgh-flamme").classList.remove("hidden");
+      recos.push("Éloigner toute flamme ou étincelle");
       recos.push("Ventilation indispensable");
     }
 
     if (IRRITANT.includes(h)) {
-      document.getElementById("sg-exclam").classList.remove("hidden");
+      document.getElementById("sgh-exclam").classList.remove("hidden");
       recos.push("Port de gants");
-      recos.push("Port de lunettes");
+      recos.push("Port de lunettes de sécurité");
     }
 
     if (TOX.includes(h)) {
-      document.getElementById("sg-skull").classList.remove("hidden");
-      recos.push("Manipuler en vase clos si possible");
+      document.getElementById("sgh-skull").classList.remove("hidden");
+      recos.push("Manipulation sous hotte si possible");
       recos.push("Masque A2P3 indispensable");
     }
 
     if (CORR.includes(h)) {
-      document.getElementById("sg-corrosif").classList.remove("hidden");
+      document.getElementById("sgh-corrosif").classList.remove("hidden");
       recos.push("Port d’un écran facial");
       recos.push("Gants chimie longue manche");
     }
 
     if (EXPLO.includes(h)) {
-      document.getElementById("sg-explos").classList.remove("hidden");
+      document.getElementById("sgh-explos").classList.remove("hidden");
       recos.push("Éviter tout choc / frottement");
     }
 
     if (ENV.includes(h)) {
-      document.getElementById("sg-env").classList.remove("hidden");
-      recos.push("Ne pas rejeter dans les eaux usées");
+      document.getElementById("sgh-env").classList.remove("hidden");
+      recos.push("Ne pas rejeter dans les égouts");
     }
   });
 
@@ -83,8 +85,9 @@ function analyze() {
     document.getElementById("reco-list").innerHTML += `<li>${r}</li>`;
   });
 
-  let html = `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
-  
+  let html =
+    `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
+
   if (isCMR) {
     html += `
       <h3 style="color:red;">🔴 PRODUIT CMR</h3>
@@ -99,16 +102,17 @@ function analyze() {
   }
 
   html += `</div>`;
+
   document.getElementById("result").innerHTML = html;
 }
 
-/* ✅ Reset */
+/* Reset */
 function resetAnalyse() {
   selectedH = [];
   document.querySelectorAll("button.selected").forEach(b => b.classList.remove("selected"));
   document.querySelectorAll(".sgh").forEach(i => i.classList.add("hidden"));
-  document.getElementById("reco").classList.add("hidden");
   document.getElementById("sgh-zone").classList.add("hidden");
-  document.getElementById("produit").value = "";
+  document.getElementById("reco").classList.add("hidden");
   document.getElementById("result").innerHTML = "";
+  document.getElementById("produit").value = "";
 }
