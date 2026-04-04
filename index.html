@@ -1,108 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewportanalyze()">Analyser</button>  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
+
+    <div id="result"></div>
+
+  </div>
+</main>
+
+<!-- ✅ CHARGEMENT CORRECT DU JS -->
 <script src="app.js"></script>
-let selectedH = [];
 
-/* ✅ Sélection / désélection des mentions H */
-function toggleH(code) {
-  const btn = event.target;
-  btn.classList.toggle("selected");
+</body>
+</html>
+  <title>Analyse CMR – RESTEV</title>
 
-  if (selectedH.includes(code)) {
-    selectedH = selectedH.filter(h => h !== code);
-  } else {
-    selectedH.push(code);
-  }
-}
+  <!-- ✅ CHARGEMENT CORRECT DU CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-/* ✅ ANALYSE CMR + RECOMMANDATIONS */
-function analyze() {
-  const produit = document.getElementById("produit").value || "Non renseigné";
+<body>
 
-  // Mentions CMR
-  const CMR = ["H340", "H350", "H350i", "H360", "H360F", "H360D"];
-  const isCMR = selectedH.some(h => CMR.includes(h));
+<header class="header">
+  <img src="logo.png" alt="Logo RESTEV" class="logo">
+  <h1>Analyse CMR</h1>
+  <p class="subtitle">Outil RESTEV – Version stable</p>
+</header>
 
-  let html = `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
+<main>
+  <div class="card">
 
-  if (isCMR) {
-    html += `
-      <h3 style="color:red;">🔴 PRODUIT CMR</h3>
-      <p><b>${produit}</b></p>
-      <p><b>Mentions détectées :</b> ${selectedH.join(", ")}</p>
+    <label>Nom du produit :</label>
+    <input id="produit" type="text" placeholder="Ex : Acétone">
 
-      <h4>⚠️ Dangers identifiés :</h4>
-      <ul>
-        <li>Risque de cancer (H350)</li>
-        <li>Mutations génétiques possibles (H340)</li>
-        <li>Risque pour la fertilité ou le fœtus (H360)</li>
-        <li>Effets possibles même à faible dose</li>
-      </ul>
+    <label>Mentions H CMR :</label>
+    <div class="grid">
+      <button onclick="toggleH('H340')">H340</button>
+      <button onclick="toggleH('H350')">H350</button>
+      <button onclick="toggleH('H350i')">H350i</button>
+      <button onclick="toggleH('H360')">H360</button>
+      <button onclick="toggleH('H360F')">H360F</button>
+      <button onclick="toggleH('H360D')">H360D</button>
+    </div>
 
-      <h4>🛡️ Prévention obligatoire :</h4>
-      <ul>
-        <li>Substitution si possible</li>
-        <li>Ventilation renforcée + aspiration à la source</li>
-        <li>Limiter l’exposition des salariés</li>
-        <li>Utiliser des contenants fermés</li>
-      </ul>
-
-      <h4>👷‍♂️ Équipements de Protection :</h4>
-      <ul>
-        <li>Gants nitrile résistants</li>
-        <li>Lunettes enveloppantes</li>
-        <li>Masque A2P3 (ou appareil ventilé)</li>
-        <li>Blouse ou combinaison de protection</li>
-      </ul>
-
-      <h4>📋 Obligations réglementaires :</h4>
-      <ul>
-        <li>Fiche d’exposition CMR obligatoire</li>
-        <li>Suivi médical renforcé</li>
-        <li>Traçabilité 50 ans</li>
-      </ul>
-    `;
-  } 
-  else {
-
-    html += `
-      <h3 style="color:green;">🟢 PRODUIT NON CMR</h3>
-      <p><b>${produit}</b></p>
-
-      <h4>ℹ️ Risques possibles :</h4>
-      <ul>
-        <li>Irritation peau / yeux</li>
-        <li>Inflammabilité possible</li>
-        <li>Toxicité modérée en cas d’inhalation</li>
-      </ul>
-
-      <h4>🛡️ Bonnes pratiques :</h4>
-      <ul>
-        <li>Port de gants adaptés</li>
-        <li>Ventilation ou travail en zone aérée</li>
-        <li>Lunettes si projections possibles</li>
-        <li>Ne pas manger / fumer sur le poste</li>
-      </ul>
-
-      <h4>🚿 En cas d’exposition :</h4>
-      <ul>
-        <li>Rincer abondamment la peau ou les yeux</li>
-        <li>Changer les vêtements souillés</li>
-        <li>Consulter un médecin si les symptômes persistent</li>
-      </ul>
-    `;
-  }
-
-  html += `</div>`;
-  document.getElementById("result").innerHTML = html;
-}
-
-/* ✅ Réinitialisation complète */
-function resetAnalyse() {
-  selectedH = [];
-
-  document.querySelectorAll("button.selected").forEach(btn =>
-    btn.classList.remove("selected")
-  );
-
-  document.getElementById("produit").value = "";
-  document.getElementById("result").innerHTML = "";
-}
