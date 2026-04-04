@@ -13,17 +13,15 @@ function toggleH(code) {
 function analyze() {
   const produit = document.getElementById("produit").value || "Non renseigné";
   const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
-
   const isCMR = selectedH.some(h => CMR.includes(h));
 
   let html = `<div class='result-section'>`;
 
   if (isCMR) {
-
     html += `
       <h3 style='color:red;'>🔴 Produit CMR détecté</h3>
       <p><b>Produit :</b> ${produit}</p>
-      <p><b>Mentions CMR détectées :</b> ${selectedH.join(", ")}</p>
+      <p><b>Mentions détectées :</b> ${selectedH.join(", ")}</p>
 
       <h4>⚠️ Pourquoi c’est dangereux :</h4>
       <ul>
@@ -38,14 +36,14 @@ function analyze() {
         <li><b>Substitution</b> par un produit non CMR si possible</li>
         <li><b>Ventilation renforcée</b> + aspiration à la source</li>
         <li><b>Limiter le nombre de personnes exposées</b></li>
-        <li>Utiliser des <b>bacs fermés</b>, éviter l’ouverture prolongée</li>
+        <li>Éviter les ouvertures prolongées des contenants</li>
       </ul>
 
-      <h4>👷‍♂️ Équipements de Protection Individuelle :</h4>
+      <h4>👷‍♂️ Équipements de protection individuelle :</h4>
       <ul>
-        <li><b>Gants nitrile</b> (pas latex)</li>
+        <li><b>Gants nitrile</b> (résistants chimiques)</li>
         <li><b>Lunettes enveloppantes</b></li>
-        <li><b>Masque A2P3</b> (ou appareil ventilé si exposition forte)</li>
+        <li><b>Masque A2P3</b> (ou appareil ventilé)</li>
         <li><b>Combinaison anti‑projection</b></li>
       </ul>
 
@@ -56,9 +54,33 @@ function analyze() {
         <li><b>Traçabilité 50 ans</b></li>
       </ul>
     `;
-
   } else {
+    html += `
+      <h3 style='color:green;'>🟢 Produit NON CMR</h3>
+      <p><b>Produit :</b> ${produit}</p>
 
+      <h4>ℹ️ Risques possibles (hors CMR) :</h4>
+      <ul>
+        <li>Irritation peau / yeux</li>
+        <li>Inflammabilité possible</li>
+        <li>Toxicité légère en cas d’ingestion ou inhalation</li>
+      </ul>
+
+      <h4>🛡️ Bonnes pratiques recommandées :</h4>
+      <ul>
+        <li>Port de <b>gants adaptés</b></li>
+        <li>Aération suffisante du poste</li>
+        <li>Lunettes si projections possibles</li>
+        <li>Ne pas manger / boire sur le poste</li>
+        <li>Stocker dans un endroit ventilé</li>
+      </ul>
+    `;
+  }
+
+  html += "</div>";
+
+  document.getElementById("result").innerHTML = html;
+}
     html += `
       <h3 style='color:green;'>🟢 Produit NON CMR</h3>
       <p><b>Produit :</b> ${produit}</p>
