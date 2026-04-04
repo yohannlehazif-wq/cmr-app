@@ -15,8 +15,18 @@ function toggleH(code) {
 /* ANALYSE CMR + RECOMMANDATIONS + SGH */
 function analyze() {
   const produit = document.getElementById("produit").value || "Non renseigné";
+
+  // ✅ Définitions SGH
   const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
-  const isCMR = selectedH.some(h => CMR.includes(h));
+  const INFLAM = ["H224","H225","H226"];
+  const IRRITANT = ["H315","H319","H335"];
+  const TOX = ["H300","H301","H310","H311","H330","H331"];
+  const CORR = ["H314"];
+  const EXPLO = ["H200","H201","H202","H203"];
+  const ENV = ["H400","H410","H411"];
+
+  // ✅ Masquer tous les pictos au début
+  document.querySelectorAll(".sgh-img").forEach(img => img.classList.add("hidden"));
 
   // Masquer le SGH au début
   document.getElementById("sgh-cmr").classList.add("hidden");
