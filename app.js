@@ -1,6 +1,6 @@
 let selectedH = [];
 
-/* Sélection / désélection */
+/* Sélection */
 function toggleH(code) {
   const btn = event.target;
   btn.classList.toggle("selected");
@@ -12,14 +12,79 @@ function toggleH(code) {
   }
 }
 
+/* Analyse + SGH + Reco */
 function analyze() {
   const produit = document.getElementById("produit").value || "Non renseigné";
 
   const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
+  const INFLAM = ["H224","H225","H226"];
+  const IRRITANT = ["H315","H319","H335"];
+  const TOX = ["H300","H301","H310","H311","H330","H331"];
+  const CORR = ["H314"];
+  const EXPLO = ["H200","H201","H202","H203"];
+  const ENV = ["H400","H410","H411"];
+
   const isCMR = selectedH.some(h => CMR.includes(h));
 
-  let html = `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
+  // ✅ Réinitialisation
+  document.querySelectorAll(".sgh").forEach(i => i.classList.add("hidden"));
+  document.getElementById("sgh-zone").classList.remove("hidden");
+  document.getElementById("reco-list").innerHTML = "";
+  document.getElementById("reco").classList.remove("hidden");
 
+  let recos = [];
+
+  selectedH.forEach(h => {
+
+    if (CMR.includes(h)) {
+      document.getElementById("sg-sante").classList.remove("hidden");
+      recos.push("Masque A2P3 obligatoire");
+      recos.push("Gants nitrile résistants");
+      recos.push("Ventilation renforcée");
+      recos.push("Limiter l’exposition des salariés");
+    }
+
+    if (INFLAM.includes(h)) {
+      document.getElementById("sg-flamme").classList.remove("hidden");
+      recos.push("Éloigner toute source d’ignition");
+      recos.push("Ventilation indispensable");
+    }
+
+    if (IRRITANT.includes(h)) {
+      document.getElementById("sg-exclam").classList.remove("hidden");
+      recos.push("Port de gants");
+      recos.push("Port de lunettes");
+    }
+
+    if (TOX.includes(h)) {
+      document.getElementById("sg-skull").classList.remove("hidden");
+      recos.push("Manipuler en vase clos si possible");
+      recos.push("Masque A2P3 indispensable");
+    }
+
+    if (CORR.includes(h)) {
+      document.getElementById("sg-corrosif").classList.remove("hidden");
+      recos.push("Port d’un écran facial");
+      recos.push("Gants chimie longue manche");
+    }
+
+    if (EXPLO.includes(h)) {
+      document.getElementById("sg-explos").classList.remove("hidden");
+      recos.push("Éviter tout choc / frottement");
+    }
+
+    if (ENV.includes(h)) {
+      document.getElementById("sg-env").classList.remove("hidden");
+      recos.push("Ne pas rejeter dans les eaux usées");
+    }
+  });
+
+  recos.forEach(r => {
+    document.getElementById("reco-list").innerHTML += `<li>${r}</li>`;
+  });
+
+  let html = `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
+  
   if (isCMR) {
     html += `
       <h3 style="color:red;">🔴 PRODUIT CMR</h3>
@@ -37,9 +102,13 @@ function analyze() {
   document.getElementById("result").innerHTML = html;
 }
 
+/* ✅ Reset */
 function resetAnalyse() {
   selectedH = [];
-  document.querySelectorAll("button.selected").forEach(btn => btn.classList.remove("selected"));
+  document.querySelectorAll("button.selected").forEach(b => b.classList.remove("selected"));
+  document.querySelectorAll(".sgh").forEach(i => i.classList.add("hidden"));
+  document.getElementById("reco").classList.add("hidden");
+  document.getElementById("sgh-zone").classList.add("hidden");
   document.getElementById("produit").value = "";
   document.getElementById("result").innerHTML = "";
 }
