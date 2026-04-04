@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
 
-  <!-- ✅ Chargement CORRECT du CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +13,7 @@
 <header class="header">
   <img src="logo.png" class="logo" alt="Logo RESTEV">
   <h1>Analyse CMR</h1>
-  <p class="subtitle">Outil RESTEV – Version stable</p>
+  <p class="subtitle">Outil RESTEV – Version SGH + Prévention Automatique</p>
 </header>
 
 <main>
@@ -23,7 +22,7 @@
     <label>Nom du produit :</label>
     <input id="produit" type="text" placeholder="Ex : Acétone">
 
-    <label>Mentions H CMR :</label>
+    <label>Mentions H :</label>
     <div class="grid">
       <button onclick="toggleH('H340')">H340</button>
       <button onclick="toggleH('H350')">H350</button>
@@ -31,18 +30,42 @@
       <button onclick="toggleH('H360')">H360</button>
       <button onclick="toggleH('H360F')">H360F</button>
       <button onclick="toggleH('H360D')">H360D</button>
+
+      <button onclick="toggleH('H226')">H226</button>
+      <button onclick="toggleH('H315')">H315</button>
+      <button onclick="toggleH('H319')">H319</button>
+      <button onclick="toggleH('H314')">H314</button>
+      <button onclick="toggleH('H331')">H331</button>
+      <button onclick="toggleH('H410')">H410</button>
     </div>
 
-    <!-- ✅ ✅ ✅ TON BOUTON ANALYSER EST ICI -->
     <button class="analyse" onclick="analyze()">Analyser</button>
     <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
+
+    <!-- ✅ PICTOGRAMMES SGH -->
+    <div id="sgh-zone" class="sgh-zone hidden">
+
+      <img id="sg-flamme"    class="sgh hidden" src="https://i.imgur.com/fp4dT8x.png">
+      <img id="sg-exclam"    class="sgh hidden" src="https://i.imgur.com/sv9lfe9.png">
+      <img id="sg-corrosif"  class="sgh hidden" src="https://i.imgur.com/XjI6RHE.png">
+      <img id="sg-skull"     class="sgh hidden" src="https://i.imgur.com/kV8wH3s.png">
+      <img id="sg-sante"     class="sgh hidden" src="https://i.imgur.com/hyXqzAC.png">
+      <img id="sg-explos"    class="sgh hidden" src="https://i.imgur.com/YoLrmeV.png">
+      <img id="sg-env"       class="sgh hidden" src="https://i.imgur.com/tWm7A8k.png">
+
+    </div>
+
+    <!-- ✅ RECOMMANDATIONS AUTO -->
+    <div id="reco" class="reco hidden">
+      <h3>Recommandations :</h3>
+      <ul id="reco-list"></ul>
+    </div>
 
     <div id="result"></div>
 
   </div>
 </main>
 
-<!-- ✅ Chargement CORRECT du JS -->
 <script src="app.js"></script>
 
 </body>
