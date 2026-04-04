@@ -1,13 +1,5 @@
 body {
-  font-family: 20px;  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f4faff;
-  border-left: 5px solid #007bff;
-  border-radius: 12px;
-}
-
-.reco ul {
-  padding-left: 20px;
-}
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #eef4fb;
   margin: 0;
 }
@@ -24,12 +16,20 @@ body {
 }
 
 .card {
-  max-width: 550px;
+  max-width: 600px;
   margin: 40px auto;
   background: white;
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 .grid {
@@ -42,9 +42,10 @@ button {
   padding: 12px;
   border-radius: 10px;
   border: 2px solid #007bff;
-  cursor: pointer;
   background: white;
+  cursor: pointer;
   transition: .2s;
+  font-size: 15px;
 }
 
 button.selected {
@@ -52,24 +53,24 @@ button.selected {
   color: white;
 }
 
-.analyse {
-  margin-top: 15px;
+.analyse, .reset {
   width: 100%;
-  background: #007bff;
-  color: white;
   padding: 14px;
   border-radius: 12px;
+  font-size: 18px;
+  margin-top: 10px;
   border: none;
+  cursor: pointer;
+}
+
+.analyse {
+  background: #007bff;
+  color: white;
 }
 
 .reset {
-  margin-top: 10px;
-  width: 100%;
   background: #555;
   color: white;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
 }
 
 .result-section {
@@ -84,20 +85,19 @@ button.selected {
 }
 
 .result-ok {
-  background: #e1ffe8;
+  background: #e1ffe7;
   border-left: 6px solid green;
 }
 
-/* ✅ SGH Zone */
+/* ✅ SGH */
 .sgh-zone {
   text-align: center;
   margin-top: 20px;
 }
 
 .sgh {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+  width: 90px;
+  height: 90px;
   margin: 10px;
 }
 
@@ -108,3 +108,8 @@ button.selected {
 /* ✅ Recommandations */
 .reco {
   margin-top: 25px;
+  padding: 20px;
+  background: #f4faff;
+  border-left: 5px solid #007bff;
+  border-radius: 12px;
+}
