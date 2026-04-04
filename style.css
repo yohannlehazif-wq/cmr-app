@@ -61,34 +61,31 @@ button {
   font-size: 15px;
 }
 
-button:hover {
-  background: #e0edff;
-}
-
 button.selected {
   background: #007bff;
   color: white;
-  transform: scale(1.05);
-}
-
-.analyse, .reset {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 18px;
-  margin-top: 10px;
-  border: none;
-  cursor: pointer;
 }
 
 .analyse {
+  width: 100%;
   background: #007bff;
   color: white;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  border: none;
+  margin-top: 15px;
 }
 
 .reset {
+  width: 100%;
   background: #555;
   color: white;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  border: none;
+  margin-top: 10px;
 }
 
 .result-section {
