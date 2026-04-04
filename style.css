@@ -1,5 +1,13 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 20px;  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4faff;
+  border-left: 5px solid #007bff;
+  border-radius: 12px;
+}
+
+.reco ul {
+  padding-left: 20px;
+}
   background: #eef4fb;
   margin: 0;
 }
@@ -13,18 +21,6 @@ body {
 
 .logo {
   height: 70px;
-  margin-bottom: 10px;
-}
-
-.header h1 {
-  margin: 0;
-  color: #0056d6;
-  font-size: 28px;
-}
-
-.subtitle {
-  margin-top: 5px;
-  color: #444;
 }
 
 .card {
@@ -33,16 +29,7 @@ body {
   background: white;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0px 6px 25px rgba(0,0,0,0.10);
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
 }
 
 .grid {
@@ -55,10 +42,9 @@ button {
   padding: 12px;
   border-radius: 10px;
   border: 2px solid #007bff;
-  background: white;
   cursor: pointer;
+  background: white;
   transition: .2s;
-  font-size: 15px;
 }
 
 button.selected {
@@ -67,25 +53,23 @@ button.selected {
 }
 
 .analyse {
+  margin-top: 15px;
   width: 100%;
   background: #007bff;
   color: white;
   padding: 14px;
   border-radius: 12px;
-  font-size: 18px;
   border: none;
-  margin-top: 15px;
 }
 
 .reset {
+  margin-top: 10px;
   width: 100%;
   background: #555;
   color: white;
   padding: 14px;
   border-radius: 12px;
-  font-size: 18px;
   border: none;
-  margin-top: 10px;
 }
 
 .result-section {
@@ -100,6 +84,27 @@ button.selected {
 }
 
 .result-ok {
-  background: #e1ffe7;
+  background: #e1ffe8;
   border-left: 6px solid green;
 }
+
+/* ✅ SGH Zone */
+.sgh-zone {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sgh {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ✅ Recommandations */
+.reco {
+  margin-top: 25px;
