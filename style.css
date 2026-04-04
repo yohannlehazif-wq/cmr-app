@@ -1,14 +1,14 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #eef4fb;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e2edff, #f8fbff);
   margin: 0;
 }
 
 .header {
   background: white;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
-  border-bottom: 4px solid #007bff;
+  border-bottom: 5px solid #007bff;
 }
 
 .logo {
@@ -16,37 +16,55 @@ body {
   margin-bottom: 10px;
 }
 
+.header h1 {
+  margin: 0;
+  color: #0056d6;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin-top: 5px;
+  color: #444;
+}
+
 .card {
-  max-width: 550px;
+  max-width: 520px;
   margin: 40px auto;
   background: white;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0px 12px 35px rgba(0,0,0,0.12);
 }
 
 input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 16px;
+  background: #f8fbff;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 button {
-  padding: 10px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 12px;
   border: 2px solid #007bff;
   background: white;
   cursor: pointer;
   font-size: 16px;
+  transition: .2s;
+}
+
+button:hover {
+  background: #e6f0ff;
 }
 
 button.selected {
@@ -54,47 +72,38 @@ button.selected {
   color: white;
 }
 
-.analyse {
+.analyse, .reset {
   width: 100%;
-  background: #007bff;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.analyse {
+  background: linear-gradient(45deg, #007bff, #0056d6);
   color: white;
-  margin-top: 20px;
 }
 
 .reset {
-  width: 100%;
   background: #555;
   color: white;
-  margin-top: 10px;
 }
 
 .result-section {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 10px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .result-cmr {
   background: #ffe5e5;
-  border-left: 5px solid red;
+  border-left: 6px solid red;
 }
 
 .result-ok {
   background: #e5ffe8;
-  border-left: 5px solid green;
-}
-``/* SGH CMR - affichage propre */
-.sgh {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.sgh-img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
-.hidden {
-  display: none;
+  border-left: 6px solid green;
 }
