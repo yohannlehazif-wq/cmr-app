@@ -123,13 +123,9 @@ input {
   width: 75px;
   height: 75px;
   object-fit: contain;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  display: block;
-  margin: auto;
+  background: transparent   
 }
-}
+
 /* ✅ RECOMMANDATIONS AUTOMATIQUES */
 .reco-container {
   margin-top: 20px;
