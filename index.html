@@ -3,63 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analyse CMR – SGH Fonctionnel</title>
+  <title>Analyse CMR – RESTEV</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Chargement CSS -->
+  style.css
 </head>
 
 <body>
 
-  <header>
-    <h1>Analyse CMR – Version SGH Fonctionnelle</h1>
-  </header>
+<header class="header">
+  <h1>Analyseur CMR</h1>
+  <p class="subtitle">Outil RESTEV – Version Pro Stable</p>
+</header>
 
-  <main>
-    <div class="card">
+<main>
+  <div class="card">
 
-      <label>Nom du produit :</label>
-      <input id="produit" type="text" placeholder="Acétone, White Spirit…">
+    <label>Nom du produit :</label>
+    <input id="produit" type="text" placeholder="Ex : Acétone">
 
-      <label>Mentions H :</label>
-      <div class="grid">
-        <button onclick="toggleH('H340')">H340</button>
-        <button onclick="toggleH('H350')">H350</button>
-        <button onclick="toggleH('H350i')">H350i</button>
-        <button onclick="toggleH('H360')">H360</button>
-        <button onclick="toggleH('H360F')">H360F</button>
-        <button onclick="toggleH('H360D')">H360D</button>
-      </div>
-
-      <button class="analyse" onclick="analyze()">Analyser</button>
-      <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
-
-      <!-- ✅ PICTOGRAMMES SGH TRANSPARENTS -->
-      <div id="pictos" class="pictos-container hidden">
-
-        <h3>Pictogrammes SGH :</h3>
-
-        <div class="pictos-grid">
-
-          <img id="sg-flamme" class="picto hidden" src="https://i.imgur.com/fp4dT8x.png">
-          <img id="sg-skull" class="picto hidden" src="https://i.imgur.com/kV8wH3s.png">
-          <img id="sg-corrosif" class="picto hidden" src="https://i.imgur.com/XjI6RHE.png">
-          <img id="sg-exclam" class="picto hidden" src="https://i.imgur.com/sv9lfe9.png">
-          <img id="sg-sante" class="picto hidden" src="https://i.imgur.com/hyXqzAC.png">
-          <img id="sg-explos" class="picto hidden" src="https://i.imgur.com/YoLrmeV.png">
-          <img id="sg-env" class="picto hidden" src="https://i.imgur.com/tWm7A8k.png">
-
-        </div>
-
-      </div>
-
-      <div id="result"></div>
-
+    <label>Mentions H :</label>
+    <div class="grid">
+      <button onclick="toggleH('H340')">H340</button>
+      <button onclick="toggleH('H350')">H350</button>
+      <button onclick="toggleH('H350i')">H350i</button>
+      <button onclick="toggleH('H360')">H360</button>
+      <button onclick="toggleH('H360F')">H360F</button>
+      <button onclick="toggleH('H360D')">H360D</button>
     </div>
-  </main>
 
-  <!-- ✅ JAVASCRIPT -->
-  <script src="app.js"></script>
+    <button class="analyse" onclick="analyze()">Analyser</button>
+    <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
+
+    <div id="result"></div>
+
+  </div>
+</main>
+
+<!-- Chargement JS -->
+app.js
 
 </body>
 </html>
