@@ -1,88 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analyse CMR – RESTEV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse CMR – SGH Fonctionnel</title>
 
-  <!-- CHARGEMENT DU CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <img src="logo.png" class="logo" alt="Logo RESTEV" />
-    <h1 class="header-title">Analyse des produits CMR</h1>
-    <p class="subtitle">RESTEV – Outil d’aide à la prévention</p>
+  <header>
+    <h1>Analyse CMR – Version SGH Fonctionnelle</h1>
   </header>
 
   <main>
-    <div class="card fade-in">
+    <div class="card">
 
-      <label class="label">Nom du produit</label>
-      <input id="produit" type="text" placeholder="Ex : Acétone" />
+      <label>Nom du produit :</label>
+      <input id="produit" type="text" placeholder="Acétone, White Spirit…">
 
-      <label class="label">Mentions H détectées</label>
-      <div class="h-grid">
-        <button class="h-btn" onclick="toggleH('H340')">H340</button>
-        <button class="h-btn" onclick="toggleH('H350')">H350</button>
-        <button class="h-btn" onclick="toggleH('H350i')">H350i</button>
-        <button class="h-btn" onclick="toggleH('H360')">H360</button>
-        <button class="h-btn" onclick="toggleH('H360F')">H360F</button>
-        <button class="h-btn" onclick="toggleH('H360D')">H360D</button>
+      <label>Mentions H :</label>
+      <div class="grid">
+        <button onclick="toggleH('H340')">H340</button>
+        <button onclick="toggleH('H350')">H350</button>
+        <button onclick="toggleH('H350i')">H350i</button>
+        <button onclick="toggleH('H360')">H360</button>
+        <button onclick="toggleH('H360F')">H360F</button>
+        <button onclick="toggleH('H360D')">H360D</button>
       </div>
 
-      <button class="btn-primary" onclick="analyze()">Analyser</button>
-      <button class="btn-secondary" onclick="resetAnalyse()">Réinitialiser</button>
+      <button class="analyse" onclick="analyze()">Analyser</button>
+      <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
 
-      <!-- SGH -->
-<!-- ✅ PICTOGRAMMES SGH TRANSPARENTS – VERSION FINALE -->
-<div id="pictos" class="pictos-container hidden">
-  <h4>Pictogrammes SGH :</h4>
+      <!-- ✅ PICTOGRAMMES SGH TRANSPARENTS -->
+      <div id="pictos" class="pictos-container hidden">
 
-  <div class="pictos-grid">
+        <h3>Pictogrammes SGH :</h3>
 
-    <!-- Inflammable -->
-    https://i.imgur.com/fp4dT8x.png
+        <div class="pictos-grid">
 
-    <!-- Toxicité aiguë -->
-    https://i.imgur.com/kV8wH3s.png
+          <img id="sg-flamme" class="picto hidden" src="https://i.imgur.com/fp4dT8x.png">
+          <img id="sg-skull" class="picto hidden" src="https://i.imgur.com/kV8wH3s.png">
+          <img id="sg-corrosif" class="picto hidden" src="https://i.imgur.com/XjI6RHE.png">
+          <img id="sg-exclam" class="picto hidden" src="https://i.imgur.com/sv9lfe9.png">
+          <img id="sg-sante" class="picto hidden" src="https://i.imgur.com/hyXqzAC.png">
+          <img id="sg-explos" class="picto hidden" src="https://i.imgur.com/YoLrmeV.png">
+          <img id="sg-env" class="picto hidden" src="https://i.imgur.com/tWm7A8k.png">
 
-    <!-- Corrosif -->
-    https://i.imgur.com/XjI6RHE.png
+        </div>
 
-    <!-- Irritant / sensibilisation -->
-    https://i.imgur.com/sv9lfe9.png
+      </div>
 
-    <!-- Danger santé (CMR) -->
-    https://i.imgur.com/hyXqzAC.png
-
-    <!-- Explosif -->
-    https://i.imgur.com/YoLrmeV.png
-
-    <!-- Environnement -->
-    https://i.imgur.com/tWm7A8k.png
-
-  </div>
-</div>
-
-``
-      <!-- ✅ RECOMMANDATIONS AUTOMATIQUES -->
-<div id="reco" class="reco-container hidden">
-  <h4>Recommandations :</h4>
-  <ul id="reco-list"></ul>
-</div>
       <div id="result"></div>
 
     </div>
   </main>
 
-  <footer>
-    <p>© RESTEV – Version Démo Professionnelle</p>
-  </footer>
-
-  <!-- CHARGEMENT DU JAVASCRIPT -->
+  <!-- ✅ JAVASCRIPT -->
   <script src="app.js"></script>
 
 </body>
