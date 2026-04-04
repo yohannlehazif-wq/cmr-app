@@ -21,3 +21,10 @@
 if (INFLAM.includes(h)) document.getElementById("sg-flamme").classList.remove("hidden");
 if (IRRITANT.includes(h)) document.getElementById("sg-exclam").classList.remove("hidden");
 if (TOXIQUE.includes(h)) document.getElementById("sg-skull").classList.remove("
+if (INFLAM.includes(h)) document.getElementById("sg-flamme").classList.remove("hidden");
+if (IRRITANT.includes(h)) document.getElementById("sg-exclam").classList.remove("hidden");
+if (TOXIQUE.includes(h)) document.getElementById("sg-skull").classList.remove("hidden");
+if (CORROSIF.includes(h)) document.getElementById("sg-corrosif").classList.remove("hidden");
+if (CMR.includes(h)) document.getElementById("sg-sante").classList.remove("hidden");
+if (EXPLOSIF.includes(h)) document.getElementById("sg-explos").classList.remove("hidden");
+if (ENV.includes(h)) document.getElementById("sg-env").classList.remove("hidden");
