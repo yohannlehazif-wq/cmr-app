@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
 
-  <!-- ✅ CHARGEMENT DU CSS -->
+  <!-- Chargement du CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +14,7 @@
 <header class="header">
   <img src="logo.png" class="logo" alt="Logo RESTEV">
   <h1>Analyse CMR</h1>
-  <p class="subtitle">Outil RESTEV – Version simple et fiable</p>
+  <p class="subtitle">Outil RESTEV – Version complète</p>
 </header>
 
 <main>
@@ -23,7 +23,7 @@
     <label>Nom du produit :</label>
     <input id="produit" type="text" placeholder="Ex : Acétone">
 
-    <label>Mentions H :</label>
+    <label>Mentions H (CMR) :</label>
     <div class="grid">
       <button onclick="toggleH('H340')">H340</button>
       <button onclick="toggleH('H350')">H350</button>
@@ -36,12 +36,17 @@
     <button class="analyse" onclick="analyze()">Analyser</button>
     <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
 
+    <!-- ✅ SGH CMR -->
+    <div id="sgh-cmr" class="sgh hidden">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/GHS-pictogram-health-hazard.svg" class="sgh-img">
+    </div>
+
     <div id="result"></div>
 
   </div>
 </main>
 
-<!-- ✅ CHARGEMENT DU JAVASCRIPT -->
+<!-- Chargement du JS -->
 <script src="app.js"></script>
 
 </body>
