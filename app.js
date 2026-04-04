@@ -36,11 +36,21 @@ function analyze() {
   if (isCMR) {
 
     /* ✅ Partie CMR */
+    
     html += `
       <h3 style="color:red;">🔴 PRODUIT CMR</h3>
       <p><b>Produit :</b> ${produit}</p>
       <p><b>Mentions détectées :</b> ${selectedH.join(", ")}</p>
-
+// ✅ Affichage automatique des pictogrammes SGH selon les mentions choisies
+  selectedH.forEach(h => {
+    if (INFLAM.includes(h)) document.getElementById("sg-flamme").classList.remove("hidden");
+    if (IRRITANT.includes(h)) document.getElementById("sg-exclam").classList.remove("hidden");
+    if (TOX.includes(h)) document.getElementById("sg-skull").classList.remove("hidden");
+    if (CORR.includes(h)) document.getElementById("sg-corrosif").classList.remove("hidden");
+    if (CMR.includes(h)) document.getElementById("sg-sante").classList.remove("hidden");
+    if (EXPLO.includes(h)) document.getElementById("sg-explos").classList.remove("hidden");
+    if (ENV.includes(h)) document.getElementById("sg-env").classList.remove("hidden");
+  });
       <h4>⚠️ Pourquoi c’est dangereux :</h4>
       <ul>
         <li>Peut provoquer un cancer (H350)</li>
