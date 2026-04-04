@@ -123,3 +123,20 @@ button.selected {
 .hidden {
   display: none !important;
 }
+/* ✅ SGH : affichage des pictogrammes */
+.sgh {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.sgh-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: inline-block;
+  margin: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
