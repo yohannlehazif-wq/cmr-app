@@ -1,12 +1,17 @@
 let selectedH = [];
 
-/* Sélection H */
-function toggleH(code) {
+/* Menu hamburger */
+function toggleMenu(){
+    document.querySelector(".sidebar").classList.toggle("open");
+}
+
+/* Sélection des mentions H */
+function toggleH(code){
     const index = selectedH.indexOf(code);
     const btn = document.querySelector(`button[data-code="${code}"]`);
 
-    if (index >= 0) {
-        selectedH.splice(index, 1);
+    if(index >= 0){
+        selectedH.splice(index,1);
         btn.classList.remove("selected");
     } else {
         selectedH.push(code);
@@ -14,9 +19,8 @@ function toggleH(code) {
     }
 }
 
-/* ANALYSE CMR */
-function analyze() {
-
+/* Analyse CMR */
+function analyze(){
     const produit = document.getElementById("produit").value || "Produit non renseigné";
 
     const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
@@ -24,15 +28,14 @@ function analyze() {
 
     let html = "";
 
-    if (isCMR) {
+    if(isCMR){
         html = `
         <div class="result-cmr">
             <h3>🔴 Produit CMR détecté</h3>
             <p><strong>${produit}</strong></p>
-            <p>Mentions détectées : ${selectedH.join(", ")}</p>
+            <p>Mentions : ${selectedH.join(", ")}</p>
         </div>`;
-    } 
-    else {
+    } else {
         html = `
         <div class="result-ok">
             <h3>🟢 Aucun indicateur CMR détecté</h3>
@@ -43,18 +46,13 @@ function analyze() {
     document.getElementById("result").innerHTML = html;
 }
 
-/* AJOUT PRODUITS */
+/* Ajout produit */
 function addProduct(){
     const name = document.getElementById("prodName").value;
     const h = document.getElementById("prodH").value;
-    const list = document.getElementById("product-list");
-
     if(!name) return;
 
     const li = document.createElement("li");
     li.innerHTML = `<strong>${name}</strong> — ${h}`;
-    list.appendChild(li);
-}
-function toggleMenu() {
-    document.querySelector(".sidebar").classList.toggle("open");
+    document.getElementById("product-list").appendChild(li);
 }
