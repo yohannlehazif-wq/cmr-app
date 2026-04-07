@@ -1,40 +1,36 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESTEV Vendée – Risque Chimique CMR</title>
+<!DOCTYPE html><    <meta charset="UTF-8">
+    <title>Analyse CMR – RESTEV</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
 </head>
 <body>
 
-<header>
-    <img src="assets/logo-restev.png" alt="RESTEV Vendée" class="logo">
-    <h1>Accompagnement Risque Chimique CMR</h1>
-</header>
+    <header>
+        <img src="logo.png" alt="RESTEV" style="height:80px;">
+        <h1>Analyse CMR – RESTEV</h1>
+    </header>
 
-<section class="intro">
-    <p>Sélectionnez un métier pour afficher les risques principaux, les actions de prévention, et les ressources INRS associées.</p>
-</section>
+    <section>
+        <h2>Analyse des produits CMR</h2>
 
-<section class="selector">
-    <label for="metier">Choisissez un métier :</label>
-    <select id="metier"></select>
-</section>
+        <label>Nom du produit :</label><br>
+        <input type="text" id="produit" placeholder="Ex : Acétone"><br><br>
 
-<section class="card" id="result">
-    <h2 id="title"></h2>
+        <h3>Choisissez les mentions H :</h3>
+        <button onclick="toggleH('H340')">H340</button>
+        <button onclick="toggleH('H350')">H350</button>
+        <button onclick="toggleH('H350i')">H350i</button>
+        <button onclick="toggleH('H360')">H360</button>
+        <button onclick="toggleH('H360F')">H360F</button>
+        <button onclick="toggleH('H360D')">H360D</button>
 
-    <h3>Risques principaux</h3>
-    <ul id="risques"></ul>
+        <br><br>
+        <button onclick="analyze()">Analyser</button>
 
-    <h3>Plan d’action</h3>
-    <ul id="actions"></ul>
+        <div id="result" style="margin-top:20px;"></div>
+    </section>
 
-    <h3>Liens INRS / Commentaires</h3>
-    <div id="liens"></div>
-</section>
-
-<script src="app.js"></script>
 </body>
 </html>
+<html lang="fr">
+<head>
