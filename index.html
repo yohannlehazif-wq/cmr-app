@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Analyse CMR – RESTEV</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JavaScript -->
-    <script src="app.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Tableau de bord RESTEV</title>
+    style.css
+    app.js
 </head>
 
 <body>
 
-<header>
-    <h1>Analyse CMR – RESTEV</h1>
-    <h2>Prévention santé au travail</h2>
+<nav class="sidebar">
+    index.htmlDashboard</a>
+    cmr.htmlCMR</a>
+    fds.htmlFDS</a>
+    produits.htmlProduits</a>
+    risques.htmlRisques</a>
+</nav>
+
+<header class="header-box">
+    <h1>Tableau de bord RESTEV</h1>
 </header>
 
-<main class="card">
+<main class="dashboard">
 
-    <label for="produit" class="label-title">Nom du produit :</label>
-    <input type="text" id="produit" placeholder="Ex : Acétone, White Spirit…">
-
-    <h3 class="label-title">Sélectionnez les mentions H :</h3>
-
-    <div class="h-grid">
-        <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
-        <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
-        <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
-        <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
-        <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
-        <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
+    <div class="card-module">
+        cmr.htmlAnalyse CMR</a>
+        <p>Identifier les produits CMR avec les mentions H.</p>
     </div>
 
-    <button class="analyze-btn" onclick="analyze()">Analyser</button>
+    <div class="card-module">
+        fds.htmlModule FDS</a>
+        <p>Importer et analyser les fiches de données de sécurité.</p>
+    </div>
 
-    <div id="result"></div>
+    <div class="card-module">
+        produits.htmlProduits</a>
+        <p>Base interne des produits chimiques.</p>
+    </div>
+
+    <div class="card-module">
+        risques.htmlRisques</a>
+        <p>Évaluer les différents risques professionnels.</p>
+    </div>
 
 </main>
-
-<footer>
-    RESTEV – Prévention Santé au Travail
-</footer>
 
 </body>
 </html>
