@@ -2,27 +2,22 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>RESTEV</title>
+    <title>Analyse CMR – RESTEV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JS -->
-    <script src="app.js" defer></script>
+    style.css
+    app.js
 </head>
+
 <body>
 
 <nav class="sidebar">
-    <div class="logo-box">
-        logo.png" class="logo">
-    </div>
+    <div class="logo-box">logo.png</div>
 
-    index.htmlDashboard</a>
-    cmr.htmlAnalyse CMR</a>
-    fds.html
-    produits.htmlProduits</a>
-    risques.html
+    index.html">🏠 Dashboard</a>
+    cmr.html">🔬 Analyse CMR</a>
+    fds.html">📘 Module FDS</a>
+    produits.html">🧴 Produits</a>
+    risques.html">⚡ Risques</a>
 </nav>
 
 <header class="header-box">
@@ -33,18 +28,18 @@
 <div class="main-content">
 <div class="card">
 
-    <label class="label-title" for="produit">Nom du produit :</label>
+    <label>Nom du produit :</label>
     <input type="text" id="produit">
 
-    <h3 class="label-title">Mentions H :</h3>
+    <h3>Mentions H :</h3>
 
     <div class="h-grid">
-        <button class="h-btn" onclick="toggleH('H340')" data-code="H340">H340</button>
-        <button class="h-btn" onclick="toggleH('H350')" data-code="H350">H350</button>
-        <button class="h-btn" onclick="toggleH('H350i')" data-code="H350i">H350i</button>
-        <button class="h-btn" onclick="toggleH('H360')" data-code="H360">H360</button>
-        <button class="h-btn" onclick="toggleH('H360F')" data-code="H360F">H360F</button>
-        <button class="h-btn" onclick="toggleH('H360D')" data-code="H360D">H360D</button>
+        <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
+        <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
+        <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
+        <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
+        <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
+        <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
     </div>
 
     <button class="analyze-btn" onclick="analyze()">Analyser</button>
