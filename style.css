@@ -69,7 +69,7 @@ input[type="text"] {
 
 .h-btn.selected {
     background: linear-gradient(60deg, var(--violet), var(--bleu));
-    color: white;
+    color: white !important;
     border-color: var(--bleu);
 }
 
@@ -82,12 +82,18 @@ input[type="text"] {
     color: white;
     font-size: 18px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.analyze-btn:hover {
+    opacity: 0.9;
 }
 
 #result {
     margin-top: 25px;
     padding: 20px;
     border-radius: 12px;
+    font-size: 16px;
 }
 
 .result-ok {
@@ -104,4 +110,5 @@ footer {
     text-align: center;
     padding: 20px;
     color: #666;
+    margin-top: 20px;
 }
