@@ -1,58 +1,46 @@
 <!DOCTYPE html>
-script><html lang="fr">
-</head>
-
-<body>
-
-<!-- ✅ SIDEBAR RESTEV -->
-<nav class="sidebar">
-
-    <!-- Logo -->
-    <div class="logo-box">
-        logo.png="logo" class="logo">
-    </div>
-
-    index.html
-    cmr.html
-    fds.html
-    produits.html
-    risques.html
-</nav>
-
-<!-- ✅ HEADER -->
-<header class="header-box">
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-    <h1>Tableau de bord RESTEV</h1>
-</header>
-
-<!-- ✅ CONTENU PRINCIPAL -->
-<div class="main-content">
-    <div class="card">
-
-        <h2>Ajouter un produit</h2>
-
-        <label class="label-title" for="prodName">Nom du produit :</label>
-        <input type="text" id="prodName" placeholder="Ex : Acétone">
-
-        <label class="label-title" for="prodH">Mentions H :</label>
-        <input type="text" id="prodH" placeholder="Ex : H350">
-
-        <button class="analyze-btn" onclick="addProduct()">Ajouter</button>
-
-        <h2 style="margin-top:30px;">Liste des produits</h2>
-        <ul id="product-list"></ul>
-
-    </div>
-</div>
-
-</body>
-</html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Produits – RESTEV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
     style.css
+    app.js></script>
+</head>
 
-    <!-- JS -->
+<body>
+
+<nav class="sidebar">
+    <div class="logo-box">
+        logo.png
+    </div>
+
+    index.htmlDashboard</a>
+    cmr.html
+    fds.html
+    produits.htmlProduits</a>
+    risques.html
+</nav>
+
+<header class="header-box">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <h1>Gestion des produits</h1>
+</header>
+
+<div class="main-content">
+<div class="card">
+
+    <h2>Ajouter un produit</h2>
+
+    <input type="text" id="prodName" placeholder="Nom du produit">
+    <input type="text" id="prodH" placeholder="Mentions H (ex : H350)">
+    <button class="analyze-btn" onclick="addProduct()">Ajouter</button>
+
+    <h2>Liste des produits</h2>
+    <ul id="product-list"></ul>
+
+</div>
+</div>
+
+</body>
+</html>
