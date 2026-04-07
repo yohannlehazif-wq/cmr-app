@@ -1,53 +1,59 @@
-// Chargement du fichier JSON
-fetch("data/metiers.json")
-    .then(response => response.json())
-    .then(data => initApp(data));
-
-function initApp(data) {
-    const metierSelect = document.getElementById("metier");
-
-    // Remplir la liste des métiers
-    data.forEach(m => {
-        let opt = document.createElement("option");
-        opt.value = m.metier;
-        opt.textContent = m.metier;
-        metierSelect.appendChild(opt);
-    });
-
-    // Listener
-    metierSelect.addEventListener("change", () => {
-        const selected = data.find(m => m.metier === metierSelect.value);
-        displayInfo(selected);
-    });
+let selectedH = [];let selectedH =.classList.remove("selected");
+    } else {
+        selectedH.push(code);
+        btn.classList.add("selected");
+    }
 }
 
-function displayInfo(metier) {
-    document.getElementById("title").textContent = metier.metier;
+function analyze() {
 
-    // Risques
-    const r = document.getElementById("risques");
-    r.innerHTML = "";
-    metier.risques.forEach(el => {
-        let li = document.createElement("li");
-        li.textContent = el;
-        r.appendChild(li);
-    });
+    const produit = document.getElementById("produit").value || "Non renseigné";
 
-    // Plan d'action
-    const a = document.getElementById("actions");
-    a.innerHTML = "";
-    metier.actions.forEach(el => {
-        let li = document.createElement("li");
-        li.textContent = el;
-        a.appendChild(li);
-    });
+    const CMR = ["H340", "H350", "H350i", "H360", "H360F", "H360D"];
+    const isCMR = selectedH.some(h => CMR.includes(h));
 
-    // Liens / commentaires
-    const l = document.getElementById("liens");
-    l.innerHTML = "";
-    metier.liens.forEach(el => {
-        let p = document.createElement("p");
-        p.innerHTML = `<a href="${el.url}" target="_blank">${el.titre}</a>`;
-        l.appendChild(p);
-    });
+    let html = "";
+
+    if (isCMR) {
+
+        html += `<div class="result-cmr">
+            <h3>🔴 Produit CMR détecté</h3>
+
+            <p><strong>${produit}</strong></p>
+            <p>Mentions détectées : <strong>${selectedH.join(", ")}</strong></p>
+
+            <ul>
+                <li>✅ Substitution recommandée</li>
+                <li>✅ Ventilation ou confinement du poste</li>
+                <li>✅ EPI obligatoires (gants, lunettes, masque adapté)</li>
+                <li>✅ Fiche d’exposition obligatoire</li>
+                <li>✅ Formation renforcée du salarié</li>
+                <li>✅ Réduction du temps d’exposition</li>
+            </ul>
+        </div>`;
+
+    } else {
+
+        html += `<div class="result-ok">
+            <h3>🟢 Aucun indicateur CMR détecté</h3>
+
+            <p><strong>${produit}</strong></p>
+
+            <ul>
+                <li>✅ Vérifier autres dangers chimiques éventuels</li>
+                <li>✅ Assurer ventilation minimale</li>
+                <li>✅ Port des EPI basiques selon FDS</li>
+                <li>✅ Stockage approprié</li>
+            </ul>
+        </div>`;
+    }
+
+    document.getElementById("result").innerHTML = html;
 }
+
+function toggleH(code) {
+    const index = selectedH.indexOf(code);
+    const btn = document.querySelector(`button[data-code='${code}']`);
+
+    if (index >= 0) {
+        selectedH.splice(index, 1);
