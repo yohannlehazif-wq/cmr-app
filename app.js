@@ -1,4 +1,22 @@
-let selectedH = [];let adaptés (gants, lunettes, APR)</li>
+let selectedH = [];
+
+// Sélection / désélection des mentions H
+function toggleH(code) {
+    const.includes(h));    const index = selectedH.indexOf(code);
+
+    let html = "";
+
+    if (isCMR) {
+        html += `
+        <div class="result-cmr">
+            <h3>🔴 Produit CMR détecté</h3>
+            <p><strong>${produit}</strong></p>
+            <p>Mentions détectées : <strong>${selectedH.join(", ")}</strong></p>
+
+            <ul>
+                <li>✅ Substitution recommandée</li>
+                <li>✅ Ventilation ou captation des vapeurs</li>
+                <li>✅ EPI adaptés (gants, lunettes, APR)</li>
                 <li>✅ Fiche d’exposition obligatoire</li>
                 <li>✅ Réduction du temps d’exposition</li>
             </ul>
@@ -20,11 +38,6 @@ let selectedH = [];let adaptés (gants, lunettes, APR)</li>
 
     document.getElementById("result").innerHTML = html;
 }
-``
-
-// Sélection / désélection des mentions H
-function toggleH(code) {
-    const index = selectedH.indexOf(code);
     const btn = document.querySelector(`button[data-code='${code}']`);
 
     if (index >= 0) {
@@ -42,17 +55,3 @@ function analyze() {
     const produit = document.getElementById("produit").value || "Non renseigné";
 
     const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
-    const isCMR = selectedH.some(h => CMR.includes(h));
-
-    let html = "";
-
-    if (isCMR) {
-        html += `
-        <div class="result-cmr">
-            <h3>🔴 Produit CMR détecté</h3>
-            <p><strong>${produit}</strong></p>
-            <p>Mentions détectées : <strong>${selectedH.join(", ")}</strong></p>
-
-            <ul>
-                <li>✅ Substitution recommandée</li>
-                <li>✅ Ventilation ou captation des vapeurs</li>
