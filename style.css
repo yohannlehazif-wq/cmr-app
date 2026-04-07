@@ -142,9 +142,9 @@ body {
     transition: .3s;
 }
 
-.sidebar a:hover {
-    background: rgba(255,255,255,0.15);
-}
+.sidebar a:<div class="logo-box">
+    logo.png" class="logo">
+</div>
 
 /* LOGO */
 .logo {
