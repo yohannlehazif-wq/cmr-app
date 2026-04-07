@@ -14,10 +14,9 @@ function toggleH(code) {
 }
 
 function analyze() {
-    const produit = document.getElementById("produit").value || "Produit non renseigné";
+    const produit = document.getElementById("produit")?.value || "Produit non renseigné";
     const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
     const isCMR = selectedH.some(h => CMR.includes(h));
-
     let html = "";
 
     if (isCMR) {
