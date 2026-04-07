@@ -3,30 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Module FDS – RESTEV</title>
-    style.css
-    app.js
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
+<!-- ✅ SIDEBAR RESTEV -->
 <nav class="sidebar">
-    <div class="logo-box">logo.png</div>
 
-    index.html">Dashboard</a>
-    cmr.html">CMR</a>
-    fds.html">FDS</a>
-    produits.html">Produits</a>
-    risques.html">Risques</a>
+    <!-- Logo -->
+    <div class="logo-box">
+        <img src="logo.png" alt="RESTEV" class="logo">
+    </div>
+
+    <a href="index.html">Dashboard</a>
+    <a href="cmr.html">Analyse CMR</a>
+    <a href="fds.html">Module FDS</a>
+    <a href="produits.html">Produits</a>
+    <a href="risques.html">Risques</a>
+
 </nav>
 
-<header class="header-box"><h1>Module FDS</h1></header>
+<!-- ✅ HEADER -->
+<header class="header-box">
+    <h1>Module FDS</h1>
+</header>
 
+<!-- ✅ CONTENU -->
 <div class="main-content">
-<div class="card">
-    <h2>Importer une FDS</h2>
-    <input type="file">
-    <p style="margin-top:10px;">(Analyse automatique bientôt disponible)</p>
-</div>
+    <div class="card">
+
+        <h2>Importer une Fiche de Données de Sécurité</h2>
+
+        <input type="file" id="fdsFile">
+
+        <p style="margin-top:15px; color:#555;">
+            (Lecture et analyse automatique bientôt disponible)
+        </p>
+
+    </div>
 </div>
 
 </body>
