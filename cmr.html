@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+<head></script><head>
+</head>
+
+<body>
+
+<!-- ✅ SIDEBAR RESTEV -->
+<nav class="sidebar">
+
+    <!-- Logo -->
+    <div class="logo-box">
+        logo.png="logo" class="logo">
+    </div>
+
+    index.html">Dashboard</a>
+    cmr.html">Analyse CMR</a>
+    fds.html">Module FDS</a>
+    produits.html">Produits</a>
+    risques.html">Risques</a>
+</nav>
+
+<!-- ✅ HEADER -->
+<header class="header-box">
+    <h1>Analyse CMR</h1>
+</header>
+
+<!-- ✅ CONTENU -->
+<div class="main-content">
+<div class="card">
+
+    <label for="produit" class="label-title">Nom du produit :</label>
+    <input type="text" id="produit" placeholder="Ex : Acétone, Xylène…">
+
+    <h3 class="label-title">Sélectionnez les mentions H :</h3>
+
+    <div class="h-grid">
+        <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
+        <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
+        <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
+        <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
+        <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
+        <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
+    </div>
+
+    <button class="analyze-btn" onclick="analyze()">Analyser</button>
+
+    <div id="result"></div>
+
+</div>
+</div>
+
+</body>
+</html>
     <meta charset="UTF-8">
+    <title>Analyse CMR – RESTEV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITRE</title>
 
     <!-- CSS -->
     style.css
 
     <!-- JS -->
-    app.js</script>
-</head>
-<body>
 
-<nav class="sidebar">
-    index.html">Dashboard</a>
-    cmr.html">CMR</a>
-    fds.html">FDS</a>
-    produits.html">Produits</a>
-    risques.html">Risques</a>
-</nav>
-
-<header class="header-box">
-    <h1>Analyse CMR</h1>
-</header>
-
-<div class="main-content">
-    <div class="card">
-
-        <label class="label-title" for="produit">Nom du produit :</label>
-        <input type="text" id="produit">
-
-        <h3 class="label-title">Sélectionnez les mentions H :</h3>
-
-        <div class="h-grid">
-            <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
-            <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
-            <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
-            <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
-            <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
-            <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
-        </div>
-
-        <button class="analyze-btn" onclick="analyze()">Analyser</button>
-
-        <div id="result"></div>
-
-    </div>
-</div>
-
-</body>
-</html>
