@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head></script><head>
+<head>
+    <meta charset="UTF-8">
+    <title>Analyse CMR – RESTEV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
-<!-- ✅ SIDEBAR RESTEV -->
 <nav class="sidebar">
-
-    <!-- Logo -->
     <div class="logo-box">
-        logo.png="logo" class="logo">
+        logo.png" class="logo">
     </div>
 
-    index.html">Dashboard</a>
-    cmr.html">Analyse CMR</a>
-    fds.html">Module FDS</a>
-    produits.html">Produits</a>
-    risques.html">Risques</a>
+    index.htmlDashboard</a>
+    cmr.htmlAnalyse CMR</a>
+    fds.html
+    produits.htmlProduits</a>
+    risques.html
 </nav>
 
-<!-- ✅ HEADER -->
 <header class="header-box">
     <button class="hamburger" onclick="toggleMenu()">☰</button>
-    <h1>Tableau de bord RESTEV</h1>
+    <h1>Analyse CMR</h1>
 </header>
 
-<!-- ✅ CONTENU -->
 <div class="main-content">
 <div class="card">
 
-    <label for="produit" class="label-title">Nom du produit :</label>
-    <input type="text" id="produit" placeholder="Ex : Acétone, Xylène…">
+    <label class="label-title" for="produit">Nom du produit :</label>
+    <input type="text" id="produit">
 
-    <h3 class="label-title">Sélectionnez les mentions H :</h3>
+    <h3 class="label-title">Mentions H :</h3>
 
     <div class="h-grid">
-        <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
-        <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
-        <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
-        <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
-        <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
-        <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
+        <button class="h-btn" onclick="toggleH('H340')" data-code="H340">H340</button>
+        <button class="h-btn" onclick="toggleH('H350')" data-code="H350">H350</button>
+        <button class="h-btn" onclick="toggleH('H350i')" data-code="H350i">H350i</button>
+        <button class="h-btn" onclick="toggleH('H360')" data-code="H360">H360</button>
+        <button class="h-btn" onclick="toggleH('H360F')" data-code="H360F">H360F</button>
+        <button class="h-btn" onclick="toggleH('H360D')" data-code="H360D">H360D</button>
     </div>
 
     <button class="analyze-btn" onclick="analyze()">Analyser</button>
@@ -53,12 +53,3 @@
 
 </body>
 </html>
-    <meta charset="UTF-8">
-    <title>Analyse CMR – RESTEV</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    style.css
-
-    <!-- JS -->
-
