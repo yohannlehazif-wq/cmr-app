@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analyse CMR – RESTEV</title>
 
+  <!-- ✅ CHARGEMENT DU CSS -->
   style.css
 </head>
 
 <body>
 
 <header class="header">
-  logo.png
-  <h1>Analyse des produits CMR</h1>
-  <p class="subtitle">Outil RESTEV – Version SGH + Prévention</p>
+  logo.pnglogo" alt="Logo RESTEV">
+  <h1>Analyse CMR</h1>
+  <p class="subtitle">Outil RESTEV – Version simple et fiable</p>
 </header>
 
 <main>
@@ -22,7 +23,7 @@
     <label>Nom du produit :</label>
     <input id="produit" type="text" placeholder="Ex : Acétone">
 
-    <label>Mentions H détectées :</label>
+    <label>Mentions H :</label>
     <div class="grid">
       <button onclick="toggleH('H340')">H340</button>
       <button onclick="toggleH('H350')">H350</button>
@@ -30,39 +31,18 @@
       <button onclick="toggleH('H360')">H360</button>
       <button onclick="toggleH('H360F')">H360F</button>
       <button onclick="toggleH('H360D')">H360D</button>
-
-      <!-- autres dangers -->
-      <button onclick="toggleH('H226')">H226</button>
-      <button onclick="toggleH('H315')">H315</button>
-      <button onclick="toggleH('H319')">H319</button>
-      <button onclick="toggleH('H314')">H314</button>
-      <button onclick="toggleH('H331')">H331</button>
-      <button onclick="toggleH('H410')">H410</button>
     </div>
 
     <button class="analyse" onclick="analyze()">Analyser</button>
     <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
-
-    <!-- ✅ SGH Zone -->
-    <div id="sgh-zone" class="sgh-zone hidden">
-      https://i.imgur.com/fp4dT8x.png
-      https://i.imgur.com/sv9lfe9.png
-      https://i.imgur.com/XjI6RHE.png
-      https://i.imgur.com/kV8wH3s.png
-      https://i.imgur.com/hyXqzAC.png
-      https://i.imgur.com/YoLrmeV.png
-      https://i.imgur.com/tWm7A8k.png
-    </div>
-
-    <div id="reco" class="reco hidden">
-      <h3>Recommandations :</h3>
-      <ul id="reco-list"></ul>
-    </div>
 
     <div id="result"></div>
 
   </div>
 </main>
 
-<script src="app.jsbody>
+<!-- ✅ CHARGEMENT DU JAVASCRIPT -->
+app.js
+
+</body>
 </html>
