@@ -1,60 +1,7 @@
 /* =============================== */
-/*   RESTEV APP,0,0,0.15);/*   RESTEV APP — STYLE MOBILE     */
-    padding-top:60px;
-    transition:.35s;
-    z-index:1000;
-}
-
-.sidebar.open {
-    left:0;
-}
-
-/* Logo */
-.logo-box {
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.logo-box img {
-    width:110px;
-}
-
-/* Liens menu */
-.sidebar a {
-    display:block;
-    padding:15px 25px;
-    font-size:18px;
-    color:var(--violet);
-    font-weight:600;
-    text-decoration:none;
-    border-bottom:1px solid #eee;
-}
-
-/* =============================== */
-/*   HEADER MOBILE                  */
-/* =============================== */
-
-.header-box {
-    display:flex;
-    align-items:center;
-    background:white;
-    padding:12px 18px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.06);
-    position:sticky;
-    top:0;
-    z-index:900;
-}
-
-.hamburger {
-    font-size:26px;
-    margin-right:15px;
-    background:none;
-    border:none;
-    cursor:pointer;
-}
-
-/* =============================== */
-/*   CONTENU + CARTES               */
+/*   RESTEV APP — STYLE MOBILE     */
+/** =============================== *//* =============================== */
+/*   CONTENU                       */
 /* =============================== */
 
 .main-content, .dashboard {
@@ -67,18 +14,22 @@
     gap:20px;
 }
 
+/* Cartes module */
 .card-module, .card {
     background:white;
     padding:20px;
-    border-radius:18px;
+    border-radius:22px;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .card-module a {
     font-size:22px;
+    font-weight:700;
     color:var(--violet);
     text-decoration:none;
-    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 /* Champs */
@@ -86,22 +37,9 @@ input[type=text], input[type=file] {
     width:100%;
     padding:12px;
     margin-top:15px;
-    border-radius:10px;
-    border:2px solid #ddd;
-}
-
-/* Boutons */
-.analyze-btn {
-    margin-top:20px;
-    width:100%;
-    padding:14px;
-    background:var(--violet);
-    color:white;
-    border:none;
     border-radius:14px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
+    border:2px solid #ddd;
+    font-size:16px;
 }
 
 /* Mentions H */
@@ -117,7 +55,7 @@ input[type=text], input[type=file] {
     background:#fff;
     border:2px solid var(--violet);
     color:var(--violet);
-    border-radius:12px;
+    border-radius:14px;
     font-weight:bold;
     cursor:pointer;
     transition:.2s;
@@ -126,6 +64,20 @@ input[type=text], input[type=file] {
 .h-btn.selected {
     background:var(--violet);
     color:white;
+}
+
+/* Bouton Analyse */
+.analyze-btn {
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    background:var(--violet);
+    color:white;
+    border:none;
+    border-radius:16px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* Résultats */
@@ -144,8 +96,6 @@ input[type=text], input[type=file] {
     border-radius:12px;
     border-left:6px solid #d63636;
 }
-``
-/* =============================== */
 
 :root {
     --violet:#6c4ef6;
@@ -164,7 +114,7 @@ body {
 }
 
 /* =============================== */
-/*   SIDEBAR (MENU HAMBURGER)      */
+/*   SIDEBAR / MENU MOBILE         */
 /* =============================== */
 
 .sidebar {
@@ -174,3 +124,70 @@ body {
     left:-260px;
     height:100%;
     background:white;
+    box-shadow:2px 0 10px rgba(0,0,0,0.15);
+    padding-top:60px;
+    transition:.35s;
+    z-index:1000;
+    border-radius:0 20px 20px 0;
+}
+
+.sidebar.open {
+    left:0;
+}
+
+/* Logo */
+.logo-box {
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo-box img {
+    width:110px;
+    border-radius:12px;
+}
+
+/* Liens menu */
+.sidebar a {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 25px;
+    font-size:18px;
+    color:var(--violet);
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px solid #eee;
+}
+
+.sidebar a:hover {
+    background:#f2eeff;
+}
+
+/* Icônes A3 (colorées modernes) */
+.icon {
+    font-size:22px;
+}
+
+/* =============================== */
+/*   HEADER MOBILE                 */
+/* =============================== */
+
+.header-box {
+    display:flex;
+    align-items:center;
+    background:white;
+    padding:12px 18px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    position:sticky;
+    top:0;
+    z-index:900;
+}
+
+.hamburger {
+    font-size:26px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    margin-right:15px;
+}
+
