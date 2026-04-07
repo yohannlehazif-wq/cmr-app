@@ -181,6 +181,7 @@ body {
     position:sticky;
     top:0;
     z-index:900;
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 }
 
 .hamburger {
