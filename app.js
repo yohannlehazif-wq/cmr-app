@@ -1,57 +1,62 @@
+// Liste des mentions H sélectionnées
 let selectedH = [];
 
-// Sélection / désélection des mentions H
-function toggleH(code) {
-    const.includes(h));    const index = selectedH.indexOf(code);
+// Sélection", "H360D"];// Sélection / désélection des boutons H
+    const isCMR = selectedH.some(h => CMR.includes(h));
 
     let html = "";
 
     if (isCMR) {
-        html += `
-        <div class="result-cmr">
-            <h3>🔴 Produit CMR détecté</h3>
-            <p><strong>${produit}</strong></p>
-            <p>Mentions détectées : <strong>${selectedH.join(", ")}</strong></p>
+        html = `
+            <div class="result-cmr">
+                <h3>🔴 Produit CMR détecté</h3>
+                <p><strong>${produit}</strong></p>
+                <p>Mentions détectées : <strong>${selectedH.join(", ")}</strong></p>
 
-            <ul>
-                <li>✅ Substitution recommandée</li>
-                <li>✅ Ventilation ou captation des vapeurs</li>
-                <li>✅ EPI adaptés (gants, lunettes, APR)</li>
-                <li>✅ Fiche d’exposition obligatoire</li>
-                <li>✅ Réduction du temps d’exposition</li>
-            </ul>
-        </div>`;
-    } 
-    else {
-        html += `
-        <div class="result-ok">
-            <h3>🟢 Aucun indicateur CMR détecté</h3>
-            <p><strong>${produit}</strong></p>
+                <ul>
+                    <li>✅ Substitution recommandée</li>
+                    <li>✅ Ventilation ou captation à la source</li>
+                    <li>✅ EPI adaptés (gants, lunettes, protection respiratoire)</li>
+                    <li>✅ Fiche d’exposition obligatoire</li>
+                    <li>✅ Suivi renforcé du salarié</li>
+                </ul>
+            </div>
+        `;
+    } else {
+        html = `
+            <div class="result-ok">
+                <h3>🟢 Aucun indicateur CMR détecté</h3>
+                <p><strong>${produit}</strong></p>
 
-            <ul>
-                <li>✅ Vérifier les autres dangers de la FDS</li>
-                <li>✅ Ventilation minimale du poste</li>
-                <li>✅ Port d’EPI de base</li>
-            </ul>
-        </div>`;
+                <ul>
+                    <li>✅ Vérifier la fiche de données de sécurité (FDS)</li>
+                    <li>✅ Ventilation minimale recommandée</li>
+                    <li>✅ Port des EPI de base (gants, lunettes)</li>
+                </ul>
+            </div>
+        `;
     }
 
     document.getElementById("result").innerHTML = html;
 }
-    const btn = document.querySelector(`button[data-code='${code}']`);
+function toggleH(code) {
+    const index = selectedH.indexOf(code);
+    const btn = document.querySelector(`button[data-code="${code}"]`);
 
     if (index >= 0) {
+        // Si déjà sélectionné → on retire
         selectedH.splice(index, 1);
         btn.classList.remove("selected");
     } else {
+        // Sinon → on ajoute
         selectedH.push(code);
         btn.classList.add("selected");
     }
 }
 
-// Analyse
+// Fonction d’analyse
 function analyze() {
 
-    const produit = document.getElementById("produit").value || "Non renseigné";
+    const produit = document.getElementById("produit").value || "Produit non renseigné";
 
-    const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
+    // Liste officielle des mentions CMR
