@@ -167,4 +167,54 @@ body {
 .header-box h1 {
     margin: 0;
 }
+/* =========================== */
+/*      MENU HAMBURGER         */
+/* =========================== */
 
+/* Bouton hamburger (caché sur PC) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* Mode mobile */
+@media screen and (max-width: 768px) {
+
+    /* Sidebar masquée par défaut */
+    .sidebar {
+        position: fixed;
+        left: -230px;
+        top: 0;
+        height: 100%;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    /* Sidebar ouverte */
+    .sidebar.open {
+        left: 0;
+    }
+
+    /* Bouton hamburger visible */
+    .hamburger {
+        display: inline-block;
+    }
+
+    /* Le header se met correctement */
+    .header-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Le contenu ne se décale plus */
+    .dashboard,
+    .main-content {
+        margin-left: 0 !important;
+        padding: 20px;
+    }
+}
