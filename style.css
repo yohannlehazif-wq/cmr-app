@@ -1,62 +1,158 @@
+/* ----------------------------
+   STYLE RESTEV – Design 2026
+   ---------------------------- */
+
+/* Couleurs RESTEV */
+:root {
+    --bleu: #2d6cdf;
+    --violet: #a030b8;
+    --turquoise: #48c1c9;
+    --jaune: #f7b731;
+    --gris: #f5f7fa;
+    --texte: #26405c;
+}
+
+/* ------------------- */
+/* Structure générale  */
+/* ------------------- */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--gris);
     margin: 0;
     padding: 0;
-    background: #F3F4F6;
-    color: #222;
+    color: var(--texte);
 }
 
 header {
-    background: #2A6DB0;
+    text-align: center;
+    padding: 25px 10px;
+    background: linear-gradient(60deg, var(--violet), var(--bleu));
     color: white;
-    padding: 20px;
-    text-align: center;
 }
 
-header .logo {
-    height: 60px;
+.logo {
+    height: 80px;
+    margin-bottom: 10px;
 }
 
-.intro {
-    padding: 20px;
-    text-align: center;
-    background: white;
-}
-
-.selector {
-    margin: 20px auto;
-    text-align: center;
-}
-
-.selector select {
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 10px;
-}
+/* ------------------- */
+/* Carte principale    */
+/* ------------------- */
 
 .card {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 650px;
     background: white;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* ------------------- */
+/* Champs texte        */
+/* ------------------- */
+
+.label-title {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid var(--turquoise);
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* ------------------- */
+/* Boutons H           */
+/* ------------------- */
+
+.h-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.h-btn {
+    padding: 10px 0;
+    border-radius: 10px;
+    border: 2px solid var(--violet);
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.h-btn:hover {
+    background: var(--violet);
+    color: white;
+}
+
+.h-btn.selected {
+    background: linear-gradient(60deg, var(--violet), var(--bleu));
+    color: white !important;
+    border-color: var(--bleu);
+}
+
+/* ------------------- */
+/* Bouton Analyser     */
+/* ------------------- */
+
+.analyze-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(60deg, var(--turquoise), var(--bleu));
+    color: white;
+    border: none;
+    border-radius: 14px;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+}
+
+.analyze-btn:hover {
+    opacity: 0.9;
+}
+
+/* ------------------- */
+/* Résultats           */
+/* ------------------- */
+
+#result {
+    margin-top: 25px;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 14px;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-.card h2 {
-    color: #2A6DB0;
+.result-ok {
+    background: #d4f8df;
+    border-left: 6px solid #3dbb6f;
 }
 
-.card ul {
-    list-style: square;
-    padding-left: 20px;
+.result-cmr {
+    background: #ffe5e5;
+    border-left: 6px solid #d63031;
 }
 
-a {
-    color: #2A6DB0;
-    text-decoration: none;
-}
+/* ------------------- */
+/* Footer              */
+/* ------------------- */
 
-a:hover {
-    text-decoration: underline;
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 14px;
 }
+``
