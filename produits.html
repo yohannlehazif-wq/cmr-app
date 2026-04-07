@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Produits – RESTEV</title>
-    style.css
-    app.js
+script><html lang="fr">
 </head>
 
 <body>
 
+<!-- ✅ SIDEBAR RESTEV -->
 <nav class="sidebar">
-    <div class="logo-box">logo.png</div>
 
-    index.html">Dashboard</a>
-    cmr.html">CMR</a>
-    fds.html">FDS</a>
-    produits.html">Produits</a>
-    risques.html">Risques</a>
+    <!-- Logo -->
+    <div class="logo-box">
+        logo.png="logo" class="logo">
+    </div>
+
+    index.html
+    cmr.html
+    fds.html
+    produits.html
+    risques.html
 </nav>
 
-<header class="header-box"><h1>Gestion des produits</h1></header>
+<!-- ✅ HEADER -->
+<header class="header-box">
+    <h1>Gestion des produits</h1>
+</header>
 
+<!-- ✅ CONTENU PRINCIPAL -->
 <div class="main-content">
-<div class="card">
+    <div class="card">
 
-<h2>Ajouter un produit</h2>
-<input type="text" id="prodName" placeholder="Nom du produit">
-<input type="text" id="prodH" placeholder="Mentions H (ex : H350)">
-<button class="analyze-btn" onclick="addProduct()">Ajouter</button>
+        <h2>Ajouter un produit</h2>
 
-<h2>Liste des produits</h2>
-<ul id="product-list"></ul>
+        <label class="label-title" for="prodName">Nom du produit :</label>
+        <input type="text" id="prodName" placeholder="Ex : Acétone">
 
-</div>
+        <label class="label-title" for="prodH">Mentions H :</label>
+        <input type="text" id="prodH" placeholder="Ex : H350">
+
+        <button class="analyze-btn" onclick="addProduct()">Ajouter</button>
+
+        <h2 style="margin-top:30px;">Liste des produits</h2>
+        <ul id="product-list"></ul>
+
+    </div>
 </div>
 
 </body>
 </html>
+<head>
+    <meta charset="UTF-8">
+    <title>Produits – RESTEV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    style.css
+
+    <!-- JS -->
