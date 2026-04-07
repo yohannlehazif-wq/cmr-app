@@ -1,90 +1,9 @@
-/* === THEME RESTEV – DESIGN MODERNE === */
+/* ========================== */
+/*   STYLE RESTEV MODERNE     */
+/* ========================== */
 
-:root {
-    --bleu:#2d6cdf;
-    --violet:#7b2cbf;
-    --turquoise:#48c1c9;
-    --fond:#f3f5f9;
-    --texte:#2c3e50;
-}
-
-/* GLOBAL */
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial;
-    background: var(--fond);
-    color: var(--texte);
-}
-
-/* SIDEBAR */
-.sidebar {
-    width: 220px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: linear-gradient(180deg, var(--violet), var(--bleu));
-    padding-top: 30px;
-    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
-}
-
-.sidebar a {
-    display: block;
-    padding: 14px 25px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-left: 4px solid transparent;
+20px rgba(0,0,0,0.1);:root {
     transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background: rgba(255,255,255,0.15);
-    border-left: 4px solid var(--turquoise);
-}
-
-/* HEADER */
-.header-box {
-    margin-left: 220px;
-    padding: 25px;
-    background: white;
-    border-bottom: 1px solid #ddd;
-}
-
-.header-box h1 {
-    margin: 0;
-}
-
-/* PAGE CONTENT */
-.main-content {
-    margin-left: 240px;
-    padding: 30px;
-}
-
-/* CARDS */
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 900px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* DASHBOARD GRID */
-.dashboard {
-    margin-left: 240px;
-    padding: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.card-module {
-    background: white;
-    padding: 22px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: .3s;
 }
 
 .card-module:hover {
@@ -92,73 +11,132 @@ body {
 }
 
 .card-module a {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 20px;
     color: var(--violet);
     text-decoration: none;
-}
-
-/* FORMULAIRES */
-input[type="text"], input[type="file"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 12px;
-    border: 2px solid var(--turquoise);
-    border-radius: 10px;
-}
-
-/* BOUTONS MENTIONS H */
-.h-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.h-btn {
-    padding: 12px;
-    border-radius: 10px;
-    border: 2px solid var(--violet);
-    background: white;
     font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
 }
 
-.h-btn:hover { background: var(--violet); color: white; }
+/* ========================== */
+/* RESPONSIVE SMARTPHONE      */
+/* ========================== */
+@media screen and (max-width: 768px) {
 
-.h-btn.selected {
-    background: linear-gradient(60deg, var(--violet), var(--bleu));
-    border-color: var(--bleu);
+    /* Sidebar devient un menu horizontal */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+        flex-direction: row;
+        padding: 10px 0;
+    }
+
+    .sidebar a {
+        padding: 10px 15px;
+        font-size: 14px;
+        border-left: none;
+        white-space: nowrap;
+    }
+
+    .logo-box {
+        display: none;
+    }
+
+    .header-box {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .dashboard {
+        margin-left: 0;
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+    --bleu:#2d6cdf;
+    --violet:#7b2cbf;
+    --turquoise:#48c1c9;
+    --fond:#f5f6fa;
+    --texte:#2c3e50;
+}
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial;
+    background: var(--fond);
+    color: var(--texte);
+}
+
+/* ========================== */
+/*   SIDEBAR                  */
+/* ========================== */
+.sidebar {
+    width: 230px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    gap: 10px;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--violet), var(--bleu));
+    padding-top: 25px;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+}
+
+/* LOGO */
+.logo-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* LIENS */
+.sidebar a {
+    display: block;
+    padding: 15px 25px;
+    font-size: 17px;
     color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-left: 4px solid transparent;
+    transition: 0.25s;
 }
 
-/* BOUTON ANALYSE */
-.analyze-btn {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 25px;
-    background: linear-gradient(60deg, var(--turquoise), var(--bleu));
-    color: white;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
+.sidebar a:hover {
+    background: rgba(255,255,255,0.15);
+    border-left: 4px solid var(--turquoise);
 }
 
-/* RESULTATS */
-.result-ok, .result-cmr {
-    margin-top: 20px;
-    padding: 20px;
+/* ========================== */
+/*   HEADER                   */
+/* ========================== */
+.header-box {
+    margin-left: 230px;
+    padding: 25px;
+    font-size: 22px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ========================== */
+/*   DASHBOARD                */
+/* ========================== */
+.dashboard {
+    margin-left: 250px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+    gap: 25px;
+}
+
+.card-module {
+    background: white;
+    padding: 25px;
     border-radius: 12px;
-}
-
-.result-ok {
-    background: #dbfbe3;
-    border-left: 8px solid #30c46a;
-}
-
-.result-cmr {
-    background: #ffe1e1;
-    border-left: 8px solid #e74c3c;
-}
