@@ -1,270 +1,176 @@
-:root {
-    --bleu:#2 CONTENU */    --bleu:#2d6cdf;
-.main-content, .dashboard {
-    margin-left: 260px;
-    padding: 25px;
+/* =============================== */
+/*   RESTEV APP,0,0,0.15);/*   RESTEV APP — STYLE MOBILE     */
+    padding-top:60px;
+    transition:.35s;
+    z-index:1000;
 }
 
-/* CARDS */
-.card, .card-module {
-    background: white;
-    padding: 22px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+.sidebar.open {
+    left:0;
 }
 
-.dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-    gap: 25px;
-}
-
-.card-module a {
-    font-size: 21px;
-    font-weight: bold;
-    color: var(--violet);
-    text-decoration: none;
-}
-
-/* FORMULAIRES */
-input[type=text], input[type=file] {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid var(--turquoise);
-    border-radius: 10px;
-    margin-top: 12px;
-}
-
-/* MENTIONS H */
-.h-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.h-btn {
-    padding: 12px;
-    border-radius: 10px;
-    border: 2px solid var(--violet);
-    background: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.h-btn:hover {
-    background: var(--violet);
-    color: white;
-}
-
-.h-btn.selected {
-    background: linear-gradient(60deg,var(--violet),var(--bleu));
-    color: white;
-}
-
-/* BOUTON ANALYSER */
-.analyze-btn {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(60deg,var(--turquoise),var(--bleu));
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-/* RÉSULTATS */
-.result-ok, .result-cmr {
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-.result-ok {
-    background: #d5fbe3;
-    border-left: 8px solid #28a745;
-}
-
-.result-cmr {
-    background: #ffe1e1;
-    border-left: 8px solid #d93025;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .sidebar{
-        width:100%;
-        height:auto;
-        display:flex;
-        overflow-x:auto;
-        white-space:nowrap;
-    }
-    .header-box,
-    .main-content,
-    .dashboard{
-        margin-left:0;
-    }
-}
-    --violet:#7b2cbf;
-    --turquoise:#48c1c9;
-    --fond:#f4f6fb;
-    --texte:#2c3e50;
-}
-
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--fond);
-    color: var(--texte);
-}
-
-/* SIDEBAR */
-.sidebar {
-    width: 230px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    background: linear-gradient(180deg, var(--violet), var(--bleu));
-    padding-top: 25px;
-    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
-}
-
-.sidebar a {
-    display: block;
-    padding: 15px 25px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: .3s;
-}
-
-.sidebar a:<div class="logo-box">
-    logo.png" class="logo">
-</div>
-
-/* LOGO */
-.logo {
-    width: 110px;
-    height: auto;
+/* Logo */
+.logo-box {
+    text-align:center;
+    margin-bottom:30px;
 }
 
 .logo-box img {
-    width: 110px;
+    width:110px;
 }
 
-/* HEADER */
+/* Liens menu */
+.sidebar a {
+    display:block;
+    padding:15px 25px;
+    font-size:18px;
+    color:var(--violet);
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px solid #eee;
+}
+
+/* =============================== */
+/*   HEADER MOBILE                  */
+/* =============================== */
+
 .header-box {
-    margin-left: 230px;
-    padding: 20px;
-    background: white;
-    border-bottom: 1px solid #ddd;
+    display:flex;
+    align-items:center;
+    background:white;
+    padding:12px 18px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    position:sticky;
+    top:0;
+    z-index:900;
 }
-
-.header-box h1 {
-    margin: 0;
-}
-/* =========================== */
-/*      MENU HAMBURGER         */
-/* =========================== */
-
-/* Bouton hamburger (caché sur PC) */
-.hamburger {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 15px;
-}
-
-/* Mode mobile */
-@media screen and (max-width: 768px) {
-
-    /* Sidebar masquée par défaut */
-    .sidebar {
-        position: fixed;
-        left: -230px;
-        top: 0;
-        height: 100%;
-        transition: 0.3s;
-        z-index: 1000;
-    }
-
-    /* Sidebar ouverte */
-    .sidebar.open {
-        left: 0;
-    }
-
-    /* Bouton hamburger visible */
-    .hamburger {
-        display: inline-block;
-    }
-
-    /* Le header se met correctement */
-    .header-box {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    /* Le contenu ne se décale plus */
-    .dashboard,
-    .main-content {
-        margin-left: 0 !important;
-        padding: 20px;
-    }
-}
-/* === MENU HAMBURGER VERSION MOBILE === */
 
 .hamburger {
-    display: none;
-    font-size: 28px;
-    border        left: 0;    border: none;
-    }
-
-    .header-box {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .dashboard,
-    .main-content {
-        margin-left: 0 !important;
-        padding: 20px;
-    }
-
-    .logo-box img {
-        display: none;
-    }
-}
-    background: none;
-    cursor: pointer;
-    margin-right: 15px;
+    font-size:26px;
+    margin-right:15px;
+    background:none;
+    border:none;
+    cursor:pointer;
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
+/* =============================== */
+/*   CONTENU + CARTES               */
+/* =============================== */
 
-    .sidebar {
-        position: fixed;
-        left: -230px;
-        top: 0;
-        width: 230px;
-        height: 100%;
-        background: linear-gradient(180deg, var(--violet), var(--bleu));
-        transition: 0.3s;
-        z-index: 999;
-    }
+.main-content, .dashboard {
+    padding:20px;
+}
 
-    .sidebar.open {
+.dashboard {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.card-module, .card {
+    background:white;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card-module a {
+    font-size:22px;
+    color:var(--violet);
+    text-decoration:none;
+    font-weight:700;
+}
+
+/* Champs */
+input[type=text], input[type=file] {
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border-radius:10px;
+    border:2px solid #ddd;
+}
+
+/* Boutons */
+.analyze-btn {
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    background:var(--violet);
+    color:white;
+    border:none;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Mentions H */
+.h-grid {
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.h-btn {
+    padding:12px;
+    background:#fff;
+    border:2px solid var(--violet);
+    color:var(--violet);
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.h-btn.selected {
+    background:var(--violet);
+    color:white;
+}
+
+/* Résultats */
+.result-ok {
+    margin-top:20px;
+    background:#e7fce7;
+    padding:16px;
+    border-radius:12px;
+    border-left:6px solid #37b55b;
+}
+
+.result-cmr {
+    margin-top:20px;
+    background:#ffe8e8;
+    padding:16px;
+    border-radius:12px;
+    border-left:6px solid #d63636;
+}
+``
+/* =============================== */
+
+:root {
+    --violet:#6c4ef6;
+    --bleu:#2d8cff;
+    --turquoise:#48c1c9;
+    --fond:#f6f7fb;
+    --texte:#1f2d3d;
+}
+
+/* RESET */
+body {
+    margin:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:var(--fond);
+    color:var(--texte);
+}
+
+/* =============================== */
+/*   SIDEBAR (MENU HAMBURGER)      */
+/* =============================== */
+
+.sidebar {
+    width:260px;
+    position:fixed;
+    top:0;
+    left:-260px;
+    height:100%;
+    background:white;
