@@ -5,52 +5,54 @@
     <title>RESTEV - Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- LIENS RÉELS CSS + JS -->
-    style.css
-    app.js
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="app.js" defer></script>
 </head>
 
 <body>
 
-<!-- ✅ SIDEBAR RESTEV -->
+<!-- ✅ MENU MOBILE -->
 <nav class="sidebar">
     <div class="logo-box">
-        logo.png
+        <img src="logo.png" class="logo">
     </div>
 
-    index.html🏠 Dashboard</a>
-    cmr.html
-    fds.html📘 Module FDS</a>
-    produits.html
-    risques.html
+    <a href="index.html">🏠 Dashboard</a>
+    <a href="cmr.html">🔬 Analyse CMR</a>
+    <a href="fds.html">📘 Module FDS</a>
+    <a href="produits.html">🧴 Produits</a>
+    <a href="risques.html">⚡ Risques</a>
 </nav>
 
-<!-- ✅ HEADER -->
+<!-- ✅ HEADER MOBILE -->
 <header class="header-box">
     <button class="hamburger" onclick="toggleMenu()">☰</button>
     <h1>RESTEV</h1>
 </header>
 
-<!-- ✅ CONTENU -->
+<!-- ✅ DASHBOARD -->
 <main class="dashboard">
 
     <div class="card-module">
-        cmr.html
+        <a href="cmr.html">🔬 Analyse CMR</a>
         <p>Identifier les CMR.</p>
     </div>
 
     <div class="card-module">
-        fds.html
+        <a href="fds.html">📘 Module FDS</a>
         <p>Importer et lire les FDS.</p>
     </div>
 
     <div class="card-module">
-        produits.html🧴 Produits</a>
+        <a href="produits.html">🧴 Produits</a>
         <p>Liste & gestion des produits chimiques.</p>
     </div>
 
     <div class="card-module">
-        risques.html
+        <a href="risques.html">⚡ Risques</a>
         <p>Risques professionnels.</p>
     </div>
 
