@@ -147,9 +147,9 @@ body {
 }
 
 /* LOGO */
-.logo-box {
-    text-align: center;
-    margin-bottom: 25px;
+.logo {
+    width: 110px;
+    height: auto;
 }
 
 .logo-box img {
