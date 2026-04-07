@@ -18,39 +18,32 @@
 </nav>
 
 <header class="header-box">
-    Titre de la page
+    <h1>Analyse CMR</h1>
 </header>
 
 <div class="main-content">
     <div class="card">
-        <!-- contenu -->
+
+        <label class="label-title" for="produit">Nom du produit :</label>
+        <input type="text" id="produit">
+
+        <h3 class="label-title">Sélectionnez les mentions H :</h3>
+
+        <div class="h-grid">
+            <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
+            <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
+            <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
+            <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
+            <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
+            <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
+        </div>
+
+        <button class="analyze-btn" onclick="analyze()">Analyser</button>
+
+        <div id="result"></div>
+
     </div>
 </div>
-</nav>
-
-<header class="header-box"><h1>Analyse CMR</h1></header>
-
-<main class="card">
-
-    <label for="produit" class="label-title">Nom du produit :</label>
-    <input type="text" id="produit">
-
-    <h3 class="label-title">Sélectionnez les mentions H :</h3>
-
-    <div class="h-grid">
-        <button class="h-btn" data-code="H340" onclick="toggleH('H340')">H340</button>
-        <button class="h-btn" data-code="H350" onclick="toggleH('H350')">H350</button>
-        <button class="h-btn" data-code="H350i" onclick="toggleH('H350i')">H350i</button>
-        <button class="h-btn" data-code="H360" onclick="toggleH('H360')">H360</button>
-        <button class="h-btn" data-code="H360F" onclick="toggleH('H360F')">H360F</button>
-        <button class="h-btn" data-code="H360D" onclick="toggleH('H360D')">H360D</button>
-    </div>
-
-    <button class="analyze-btn" onclick="analyze()">Analyser</button>
-
-    <div id="result"></div>
-
-</main>
 
 </body>
 </html>
