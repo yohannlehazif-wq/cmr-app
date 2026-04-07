@@ -14,9 +14,13 @@ function toggleH(code) {
 }
 
 function analyze() {
+
+    // ✅ Une seule déclaration, propre, moderne
     const produit = document.getElementById("produit")?.value || "Produit non renseigné";
+
     const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
     const isCMR = selectedH.some(h => CMR.includes(h));
+
     let html = "";
 
     if (isCMR) {
@@ -24,13 +28,18 @@ function analyze() {
             <div class="result-cmr">
                 <h3>🔴 Produit CMR détecté</h3>
                 <p><strong>${produit}</strong></p>
-                <p>Mentions détectées : ${selectedH.join(", ")}</p>
+                <p>Mentions détectées : <strong>${selectedH.join(", ")}</strong></p>
             </div>`;
     } else {
         html = `
             <div class="result-ok">
                 <h3>🟢 Aucun indicateur CMR détecté</h3>
                 <p><strong>${produit}</strong></p>
+            </div>`;
+    }
+
+    document.getElementById("result").innerHTML = html;
+}
             </div>`;
     }
 
