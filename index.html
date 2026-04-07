@@ -1,48 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analyse CMR – RESTEV</title>
-
-  <!-- ✅ CHARGEMENT DU CSS -->
-  style.css
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTEV Vendée – Risque Chimique CMR</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
-  logo.pnglogo" alt="Logo RESTEV">
-  <h1>Analyse CMR</h1>
-  <p class="subtitle">Outil RESTEV – Version simple et fiable</p>
+<header>
+    <img src="assets/logo-restev.png" alt="RESTEV Vendée" class="logo">
+    <h1>Accompagnement Risque Chimique CMR</h1>
 </header>
 
-<main>
-  <div class="card">
+<section class="intro">
+    <p>Sélectionnez un métier pour afficher les risques principaux, les actions de prévention, et les ressources INRS associées.</p>
+</section>
 
-    <label>Nom du produit :</label>
-    <input id="produit" type="text" placeholder="Ex : Acétone">
+<section class="selector">
+    <label for="metier">Choisissez un métier :</label>
+    <select id="metier"></select>
+</section>
 
-    <label>Mentions H :</label>
-    <div class="grid">
-      <button onclick="toggleH('H340')">H340</button>
-      <button onclick="toggleH('H350')">H350</button>
-      <button onclick="toggleH('H350i')">H350i</button>
-      <button onclick="toggleH('H360')">H360</button>
-      <button onclick="toggleH('H360F')">H360F</button>
-      <button onclick="toggleH('H360D')">H360D</button>
-    </div>
+<section class="card" id="result">
+    <h2 id="title"></h2>
 
-    <button class="analyse" onclick="analyze()">Analyser</button>
-    <button class="reset" onclick="resetAnalyse()">Réinitialiser</button>
+    <h3>Risques principaux</h3>
+    <ul id="risques"></ul>
 
-    <div id="result"></div>
+    <h3>Plan d’action</h3>
+    <ul id="actions"></ul>
 
-  </div>
-</main>
+    <h3>Liens INRS / Commentaires</h3>
+    <div id="liens"></div>
+</section>
 
-<!-- ✅ CHARGEMENT DU JAVASCRIPT -->
-app.js
-
+<script src="app.js"></script>
 </body>
 </html>
