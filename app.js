@@ -1,43 +1,53 @@
-let selectedH = [];
+// Chargement du fichier JSON
+fetch("data/metiers.json")
+    .then(response => response.json())
+    .then(data => initApp(data));
 
-function toggleH(code) {
-  const btn = event.target;
-  btn.classList.toggle("selected");
+function initApp(data) {
+    const metierSelect = document.getElementById("metier");
 
-  if (selectedH.includes(code)) {
-    selectedH = selectedH.filter(h => h !== code);
-  } else {
-    selectedH.push(code);
-  }
+    // Remplir la liste des métiers
+    data.forEach(m => {
+        let opt = document.createElement("option");
+        opt.value = m.metier;
+        opt.textContent = m.metier;
+        metierSelect.appendChild(opt);
+    });
+
+    // Listener
+    metierSelect.addEventListener("change", () => {
+        const selected = data.find(m => m.metier === metierSelect.value);
+        displayInfo(selected);
+    });
 }
 
-function analyze() {
-  const produit = document.getElementById("produit").value || "Non renseigné";
-  const CMR = ["H340","H350","H350i","H360","H360F","H360D"];
-  const isCMR = selectedH.some(h => CMR.includes(h));
+function displayInfo(metier) {
+    document.getElementById("title").textContent = metier.metier;
 
-  let html = `<div class="result-section ${isCMR ? 'result-cmr' : 'result-ok'}">`;
+    // Risques
+    const r = document.getElementById("risques");
+    r.innerHTML = "";
+    metier.risques.forEach(el => {
+        let li = document.createElement("li");
+        li.textContent = el;
+        r.appendChild(li);
+    });
 
-  if (isCMR) {
-    html += `
-      <h3 style="color:red;">🔴 PRODUIT CMR</h3>
-      <p><b>${produit}</b></p>
-      <p><b>Mentions :</b> ${selectedH.join(", ")}</p>
-    `;
-  } else {
-    html += `
-      <h3 style="color:green;">🟢 PRODUIT NON CMR</h3>
-      <p><b>${produit}</b></p>
-    `;
-  }
+    // Plan d'action
+    const a = document.getElementById("actions");
+    a.innerHTML = "";
+    metier.actions.forEach(el => {
+        let li = document.createElement("li");
+        li.textContent = el;
+        a.appendChild(li);
+    });
 
-  html += `</div>`;
-  document.getElementById("result").innerHTML = html;
-}
-
-function resetAnalyse() {
-  selectedH = [];
-  document.querySelectorAll("button.selected").forEach(btn => btn.classList.remove("selected"));
-  document.getElementById("produit").value = "";
-  document.getElementById("result").innerHTML = "";
+    // Liens / commentaires
+    const l = document.getElementById("liens");
+    l.innerHTML = "";
+    metier.liens.forEach(el => {
+        let p = document.createElement("p");
+        p.innerHTML = `<a href="${el.url}" target="_blank">${el.titre}</a>`;
+        l.appendChild(p);
+    });
 }
