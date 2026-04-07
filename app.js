@@ -55,3 +55,6 @@ function addProduct(){
     li.innerHTML = `<strong>${name}</strong> — ${h}`;
     list.appendChild(li);
 }
+function toggleMenu() {
+    document.querySelector(".sidebar").classList.toggle("open");
+}
