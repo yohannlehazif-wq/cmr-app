@@ -1,11 +1,11 @@
 let selectedH = [];
 
-/* Menu hamburger */
+/* MENU HAMBURGER */
 function toggleMenu(){
     document.querySelector(".sidebar").classList.toggle("open");
 }
 
-/* Sélection des mentions H */
+/* MENTIONS H */
 function toggleH(code){
     const index = selectedH.indexOf(code);
     const btn = document.querySelector(`button[data-code="${code}"]`);
@@ -19,7 +19,7 @@ function toggleH(code){
     }
 }
 
-/* Analyse CMR */
+/* ANALYSE CMR */
 function analyze(){
     const produit = document.getElementById("produit").value || "Produit non renseigné";
 
@@ -46,7 +46,7 @@ function analyze(){
     document.getElementById("result").innerHTML = html;
 }
 
-/* Ajout produit */
+/* PRODUITS */
 function addProduct(){
     const name = document.getElementById("prodName").value;
     const h = document.getElementById("prodH").value;
